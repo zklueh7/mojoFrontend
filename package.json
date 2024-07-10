@@ -8,7 +8,8 @@
     "build": "vite build",
     "test": "jest -i",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "render-postbuild": "npm install --production=false && npm run build"
   },
   "dependencies": {
     "assert": "^2.1.0",
