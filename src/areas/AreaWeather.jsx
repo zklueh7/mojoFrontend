@@ -13,14 +13,12 @@ import axios from "axios";
  */
 
 function AreaWeather() {
-  console.debug("AreaWeather");
   const { area } = useParams();
 
   const [areaInfo, setAreaInfo] = useState(null);
   const [areaWeather, setAreaWeather] = useState(null);
 
   useEffect(function getAreaAndWeatherInfoOnMount() {
-    console.debug("getAreaAndWeatherInfoOnMount");
     search(area);
   }, []);
 

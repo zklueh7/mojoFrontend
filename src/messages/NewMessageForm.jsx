@@ -16,12 +16,6 @@ function NewMessageForm({ area, user }) {
   });
   const [formErrors, setFormErrors] = useState([]);
 
-  console.debug(
-      "NewMessageForm",
-      "formData=", formData,
-      "formErrors=", formErrors,
-  );
-
   /** Handle form submit:
    *
    * Calls login func prop and, if successful, redirect to homepage.

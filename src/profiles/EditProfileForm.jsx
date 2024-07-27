@@ -21,7 +21,7 @@ import useTimedMessage from "../hooks/useTimedMessage";
  * Routes -> ProfileForm -> Alert
  */
 
-function ProfileForm() {
+function EditProfileForm() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -40,14 +40,6 @@ function ProfileForm() {
   // switch to use our fancy limited-time-display message hook
   const [saveConfirmed, setSaveConfirmed] = useState(false);
   // const [saveConfirmed, setSaveConfirmed] = useTimedMessage()
-
-  console.debug(
-      "ProfileForm",
-      "currentUser=", currentUser,
-      "formData=", formData,
-      "formErrors=", formErrors,
-      "saveConfirmed=", saveConfirmed,
-  );
 
   /** on form submit:
    * - attempt save to backend & report any errors
@@ -75,7 +67,7 @@ function ProfileForm() {
     let updatedUser;
 
     try {
-      updatedUser = await CatchAppApi.saveProfile(username, profileData);
+      updatedUser = await CatchAppApi.updateProfile(username, profileData);
     } catch (errors) {
       debugger;
       setFormErrors(errors);
@@ -207,4 +199,4 @@ function ProfileForm() {
   );
 }
 
-export default ProfileForm;
+export default EditProfileForm;

@@ -32,8 +32,6 @@ function useTimedMessage(timeInMsec = 3000) {
 
   useEffect(
       function showSavedMessage() {
-        console.debug(
-            "useTimedMessage useEffect showSavedMessage", "active=", active);
 
         if (active && !messageShownRef.current) {
           messageShownRef.current = true;

@@ -13,7 +13,6 @@ import "./Navigation.css";
 
 function Navbar({ logout }) {
   const { currentUser } = useContext(UserContext);
-  console.debug("Navigation", "currentUser=", currentUser);
 
   function loggedInNav() {
     return (

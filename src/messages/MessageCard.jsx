@@ -10,8 +10,6 @@ import "./Message.css";
  */
 
 function MessageCard({ messages }) {
-  console.debug("MessageCard");
-  console.log(messages);
 
   return (
       <div className="MessageCard">

@@ -12,13 +12,11 @@ import "./Area.css";
  */
 
 function AreaHome() {
-  console.debug("AreaHome");
   const { area } = useParams();
 
   const [areaInfo, setAreaInfo] = useState(null);
 
   useEffect(function getAreaInfoOnMount() {
-    console.debug("getAreaInfoOnMount");
     search(area);
   }, []);
 

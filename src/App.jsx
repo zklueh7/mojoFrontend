@@ -7,7 +7,7 @@ import CatchAppApi from "./api/api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
 import Navbar from "./routes-nav/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 // Key name for storing token in localStorage for "remember me" re-login
 export const TOKEN_STORAGE_ID = "catchapp-token";
@@ -30,33 +30,23 @@ export const TOKEN_STORAGE_ID = "catchapp-token";
 
 function App() {
   const [infoLoaded, setInfoLoaded] = useState(false);
-  const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
-
-  console.debug(
-      "App",
-      "infoLoaded=", infoLoaded,
-      "currentUser=", currentUser,
-      "token=", token,
-  );
 
   // Load user info from API. Until a user is logged in and they have a token,
   // this should not run. It only needs to re-run when a user logs out, so
   // the value of the token is a dependency for this effect.
 
   useEffect(function loadUserInfo() {
-    console.debug("App useEffect loadUserInfo", "token=", token);
 
     async function getCurrentUser() {
       if (token) {
         try {
           let { username } = jwt.decode(token);
-          // put the token on the Api class so it can use it to call the API.
+          // put the token on the API class so it can use it to call the API.
           CatchAppApi.token = token;
           let currentUser = await CatchAppApi.getCurrentUser(username);
           setCurrentUser(currentUser);
-          setApplicationIds(new Set(currentUser.applications));
         } catch (err) {
           console.error("App loadUserInfo: problem loading", err);
           setCurrentUser(null);
@@ -82,7 +72,6 @@ function App() {
    *
    * Automatically logs them in (set token) upon signup.
    *
-   * Make sure you await this function and check its return value!
    */
   async function signup(signupData) {
     try {
@@ -97,7 +86,6 @@ function App() {
 
   /** Handles site-wide login.
    *
-   * Make sure you await this function and check its return value!
    */
   async function login(loginData) {
     try {

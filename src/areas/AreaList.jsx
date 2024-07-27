@@ -16,12 +16,9 @@ import "./Area.css";
  */
 
 function AreaList() {
-  console.debug("AreaList");
-
   const [areas, setAreas] = useState(null);
 
   useEffect(function getAllAreasOnMount() {
-    console.debug("useEffect getAllAreasOnMount");
     search();
   }, []);
 

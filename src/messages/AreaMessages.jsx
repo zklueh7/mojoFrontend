@@ -14,16 +14,13 @@ import UserContext from "../auth/UserContext";
  */
 
 function AreaMessages() {
-  console.debug("AreaMessages");
   const { area } = useParams();
   const { currentUser } = useContext(UserContext);
-  console.log(area);
 
   const [areaInfo, setAreaInfo] = useState(null);
   const [messages, setMessages] = useState(null);
 
   useEffect(function getAreaAndMessageInfoOnMount() {
-    console.debug("getAreaAndMessageInfoOnMount");
     search(area);
   }, [messages]);
 
@@ -32,7 +29,6 @@ function AreaMessages() {
     let areaInfo = await CatchAppApi.getArea(area);
     setAreaInfo(areaInfo);
     let messages = await CatchAppApi.getMessages(area);
-    console.log(messages);
     setMessages(messages);
 
   }

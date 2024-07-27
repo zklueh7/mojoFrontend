@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth/UserContext"; 
+import CatchAppApi from "../api/api";
 import "./Profile.css";
 
 /** User profile page
@@ -13,7 +14,17 @@ import "./Profile.css";
 function Profile() {
   const { currentUser } = useContext(UserContext);
   const miscClimber = "/public/misc_climber.png";
-  console.debug("User Profile", "currentUser=", currentUser);
+
+  async function handleDelete(evt) {
+    evt.preventDefault();
+
+    try {
+      await CatchAppApi.deleteProfile(currentUser.username);
+    } catch (errors) {
+      debugger;
+      return;
+    }
+  }
 
   return (
       <div className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
@@ -26,12 +37,15 @@ function Profile() {
             <p>First Name: {currentUser.firstName}</p>
             <p>Last Name: {currentUser.lastName}</p>
             <p>Email: {currentUser.email}</p>
-            <p>Looking for partners? {currentUser.lookingForPartners ? "Yes" : "No"}</p>
+            <p>Looking for partners? {currentUser.lookingForPartners}</p>
             <p>Climbing Type: {currentUser.climbingType}</p>
             <p>Experience Level: {currentUser.experienceLevel}</p>
             <p>
-                <Link className="btn btn-primary font-weight-bold" to="/profile-form">
+                <Link className="btn btn-primary mr-4 font-weight-bold" to="/edit-profile-form">
                     Edit Profile
+                </Link>
+                <Link className="btn btn-danger font-weight-bold" to="/delete-profile-form">
+                    Delete Profile
                 </Link>
             </p>
         </div>

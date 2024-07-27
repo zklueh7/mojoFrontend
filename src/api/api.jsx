@@ -15,7 +15,6 @@ class CatchAppApi {
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
-    console.debug("API Call:", endpoint, data, method);
 
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${CatchAppApi.token}` };
@@ -57,8 +56,16 @@ class CatchAppApi {
 
   /** Save user profile page. */
 
-  static async saveProfile(username, data) {
+  static async updateProfile(username, data) {
     let res = await this.request(`users/${username}`, data, "patch");
+    return res.user;
+  }
+
+  /** Delete user profile page. */
+
+  static async deleteProfile(username) {
+    let data = {};
+    let res = await this.request(`users/${username}`, data, "delete");
     return res.user;
   }
 

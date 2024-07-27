@@ -4,7 +4,8 @@ import Homepage from "../homepage/Homepage";
 import SignupForm from "../auth/SignupForm";
 import LoginForm from "../auth/LoginForm";
 import Profile from "../profiles/Profile";
-import ProfileForm from "../profiles/ProfileForm";
+import EditProfileForm from "../profiles/EditProfileForm";
+import DeleteProfileForm from "../profiles/DeleteProfileForm";
 import AreaList from "../areas/AreaList";
 import AreaDetail from "../areas/AreaHome";
 import AreaMessages from "../messages/AreaMessages";
@@ -19,11 +20,6 @@ import AreaWeather from "../areas/AreaWeather";
  */
 
 function CatchRoutes({ login, signup }) {
-    console.debug(
-        "Routes",
-        `login=${typeof login}`,
-        `register=${typeof register}`,
-    );
   
     return (
         <div>
@@ -36,7 +32,9 @@ function CatchRoutes({ login, signup }) {
 
               <Route exact path="/profile" element={<Profile />} />
 
-              <Route exact path="/profile-form" element={<ProfileForm />} />
+              <Route exact path="/edit-profile-form" element={<EditProfileForm />} />
+
+              <Route exact path="/delete-profile-form" element={<DeleteProfileForm />} />
 
               <Route exact path="/search" element={<AreaList />} />
 

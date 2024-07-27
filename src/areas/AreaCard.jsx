@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
  */
 
 function AreaCard({ areas }) {
-  console.debug("AreaCardList", "areas=", areas);
 
   return (
       <div className="AreaCardList">
