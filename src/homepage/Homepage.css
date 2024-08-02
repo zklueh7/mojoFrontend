@@ -1,7 +1,39 @@
- .mr-3 {
-  margin-right: 20px;
+.heading {
+    color: #1B4332;
+    font-weight: 800;
+    margin-bottom: 1.4rem;
+    margin-top: 1.6rem;
 }
 
-.whip {
-  margin-bottom: 20px;
+.subheading {
+    margin-bottom: 2rem;
+    color: #1B4332;
 }
+
+.card-body {
+    background-color: #ccd5ae;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: 4px 4px 14px 2px rgba(66, 68, 90, 1);
+    padding: 10px;
+}
+
+.sign-up {
+    /* width: 80%; */
+    margin-top: 0px;
+}
+
+.or {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ .or span { 
+    background: #ccd5ae;
+     padding: 0 10px; 
+    font-size: 1rem;
+ }
+

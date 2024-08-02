@@ -24,7 +24,7 @@ function CatchRoutes({ login, signup }) {
     return (
         <div>
             <Routes>
-              <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/" element={<Homepage login={login}/>} />
 
               <Route exact path="/login" element={<LoginForm login={login} />} />
 

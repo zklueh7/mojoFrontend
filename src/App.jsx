@@ -7,6 +7,7 @@ import CatchAppApi from "./api/api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
 import Navbar from "./routes-nav/Navbar";
+import "./App.css"
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // Key name for storing token in localStorage for "remember me" re-login
@@ -106,7 +107,8 @@ function App() {
         <UserContext.Provider
             value={{ currentUser, setCurrentUser }}>
           <div className="App">
-            <Navbar logout={logout}/>
+            {currentUser &&
+            (<Navbar logout={logout}/>)}
             <CatchRoutes login={login} signup={signup} />
           </div>
         </UserContext.Provider>

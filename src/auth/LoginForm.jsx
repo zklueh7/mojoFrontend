@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../common/Alert";
+import "./Form.css"
 
 /** Login form.
  *
@@ -43,17 +44,12 @@ function LoginForm({ login }) {
   }
 
   return (
-      <div className="LoginForm mt-4">
-        <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-          <h3 className="mb-3">Log In</h3>
-
           <div className="card">
-            <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label>Username</label>
                   <input
                       name="username"
+                      placeholder="Username"
                       className="form-control"
                       value={formData.username}
                       onChange={handleChange}
@@ -62,9 +58,9 @@ function LoginForm({ login }) {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
                   <input
                       type="password"
+                      placeholder="Password"
                       name="password"
                       className="form-control"
                       value={formData.password}
@@ -79,16 +75,13 @@ function LoginForm({ login }) {
                     : null}
 
                 <button
-                    className="btn btn-primary float-right"
+                    className="btn"
                     onSubmit={handleSubmit}
                 >
-                  Submit
+                  Log in
                 </button>
               </form>
             </div>
-          </div>
-        </div>
-      </div>
   );
 }
 

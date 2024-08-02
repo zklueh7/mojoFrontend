@@ -53,24 +53,24 @@ function SignupForm({ signup }) {
   return (
       <div className="SignupForm">
         <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-          <h2 className="mb-3">Sign Up</h2>
+          <h2 className="heading">Sign Up</h2>
           <div className="card">
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label>Username</label>
                   <input
                       name="username"
+                      placeholder="Username"
                       className="form-control"
                       value={formData.username}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
                   <input
                       type="password"
                       name="password"
+                      placeholder="Password"
                       className="form-control"
                       value={formData.password}
                       onChange={handleChange}
@@ -78,27 +78,27 @@ function SignupForm({ signup }) {
                 </div>
 
                 <div className="form-group">
-                  <label>First name</label>
                   <input
                       name="firstName"
+                      placeholder="First Name"
                       className="form-control"
                       value={formData.firstName}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Last name</label>
                   <input
                       name="lastName"
+                      placeholder="Last Name"
                       className="form-control"
                       value={formData.lastName}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Email</label>
                   <input
                       type="email"
+                      placeholder="Email"
                       name="email"
                       className="form-control"
                       value={formData.email}
@@ -106,36 +106,36 @@ function SignupForm({ signup }) {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Looking for partners?</label>
                   <input
                       name="lookingForPartners"
+                      placeholder="Looking for partners?"
                       className="form-control"
                       value={formData.lookingForPartners}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Climbing Type</label>
                   <input
                       name="climbingType"
+                      placeholder="Climbing type?"
                       className="form-control"
                       value={formData.climbingType}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Experience Level</label>
                   <input
                       name="experienceLevel"
+                      placeholder="Experience level?"
                       className="form-control"
                       value={formData.experienceLevel}
                       onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label>Picture URL</label>
                   <input
                       name="pictureUrl"
+                      placeholder="Picture URL"
                       className="form-control"
                       value={formData.pictureUrl}
                       onChange={handleChange}
@@ -148,7 +148,7 @@ function SignupForm({ signup }) {
 
                 <button
                     type="submit"
-                    className="btn btn-primary float-right"
+                    className="btn"
                     onSubmit={handleSubmit}
                 >
                   Submit

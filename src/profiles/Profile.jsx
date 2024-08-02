@@ -29,7 +29,7 @@ function Profile() {
   return (
       <div className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
         <h3 className="text-center mt-2">My Profile</h3>
-        <div className="card">
+        <div className="card-body">
         <div className="container text-center">
             
             <img src={currentUser.pictureUrl } className="prof-img"></img>
