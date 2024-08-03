@@ -10,7 +10,6 @@ import "./Navigation.css";
 
 function Navbar({ logout }) {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
 
   return (
       <nav className="Navigation navbar navbar-expand-md">
