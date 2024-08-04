@@ -6,8 +6,8 @@ import LoginForm from "../auth/LoginForm";
 import Profile from "../profiles/Profile";
 import EditProfileForm from "../profiles/EditProfileForm";
 import DeleteProfileForm from "../profiles/DeleteProfileForm";
-import AreaList from "../areas/AreaList";
-import AreaDetail from "../areas/AreaHome";
+import Search from "../search/Search";
+import AreaHome from "../areas/AreaHome";
 import AreaMessages from "../messages/AreaMessages";
 import AreaWeather from "../areas/AreaWeather";
 
@@ -36,9 +36,9 @@ function CatchRoutes({ login, signup }) {
 
               <Route exact path="/delete-profile-form" element={<DeleteProfileForm />} />
 
-              <Route exact path="/search" element={<AreaList />} />
+              <Route exact path="/search" element={<Search />} />
 
-              <Route exact path="/areas/:area" element={<AreaDetail />} />
+              <Route exact path="/areas/:area" element={<AreaHome />} />
 
               <Route exact path="/areas/:area/messages" element={<AreaMessages />} />
 

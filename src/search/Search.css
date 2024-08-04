@@ -1,0 +1,23 @@
+.SearchForm input:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+    margin-bottom: 0px;
+  }
+  
+  .area-link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding-left: 12px;
+    /* background-color: #dad7cd;; */
+  }
+  
+.area-link:hover {
+    background-color: #588157;
+  }
+
+
+.form-control {
+  margin-bottom: 0px;
+}
