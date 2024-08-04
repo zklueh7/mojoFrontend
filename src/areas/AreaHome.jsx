@@ -33,10 +33,9 @@ function AreaHome() {
         <div className="card-body ml-1 pt-2">
           <h6 className="card-title">{areaInfo.title}</h6>
           <p>{areaInfo.description}</p>
+          <img className="area-image" src={areaInfo.pictureUrl}></img>
           <Link className="btn btn-primary btn-block mt-2" to={{pathname: `/areas/${areaInfo.name}/weather`}}>Weather</Link>
-          <img src="https://scx2.b-cdn.net/gfx/news/hires/2019/weatherforec.jpg" className="weather-img"></img><br></br>
           <Link className="btn btn-primary btn-block mt-2" to={{pathname: `/areas/${areaInfo.name}/messages`}}>Message Board</Link>
-          <img src="https://static.vecteezy.com/system/resources/previews/026/574/999/non_2x/letter-in-opened-envelope-flat-line-color-isolated-object-exchange-messages-editable-clip-art-image-on-white-background-simple-outline-cartoon-spot-illustration-for-web-design-vector.jpg" className="msg-img"></img>
         </div>
         </div>
       </div>
