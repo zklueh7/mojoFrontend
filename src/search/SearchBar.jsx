@@ -23,7 +23,7 @@ function SearchBar({ searchFor }) {
       <div className="SearchForm">
         <form className="form-inline">
           <input
-              className="form-control form-control-md flex-grow-1"
+              className="form-control"
               name="searchTerm"
               placeholder="Search for an area.."
               value={searchTerm}

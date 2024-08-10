@@ -41,18 +41,16 @@ function AreaWeather() {
 
   return (
 
-    <div className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-      <h3 className="text-center mt-2">{areaInfo.title} Weather</h3>
-        <div className="card-body">
-          <div className="container text-center">
+    <div className="container">
+      <h3 className="heading">{areaInfo.title} Weather</h3>
+        <div className="card-body text-center">
             <img src={areaWeather.data.current.condition.icon} className="forecast-img"></img>
             <p>{areaWeather.data.current.condition.text}</p>
             <p>Temperature: {areaWeather.data.current.temp_f} degrees F</p>
             <p>Humidity: {areaWeather.data.current.temp_f} %</p>
             <p>Wind: {areaWeather.data.current.wind_mph} mph</p>
-          </div>
         </div>
-        <Link className="btn btn-primary btn-block mt-2" to={{pathname: `/areas/${area}`}}>Back to Area Home</Link>
+        <Link className="btn area-home-btn" to={{pathname: `/areas/${area}`}}>Back to Area Home</Link>
     </div>
 
   );

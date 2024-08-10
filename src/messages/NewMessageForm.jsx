@@ -34,37 +34,32 @@ function NewMessageForm({ area, user }) {
   }
 
   return (
-      <div className="SignupForm">
-        <div className="container col-lg-4 offset-lg-4 mt-4">
-          <div className="card">
-            <div className="card-body">
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label>Send a message!</label>
-                  <input
-                      name="messageText"
-                      className="form-control"
-                      value={formData.messageText}
-                      onChange={handleChange}
-                  />
-                </div>
-
-                {formErrors.length
-                    ? <Alert type="danger" messages={formErrors} />
-                    : null
-                }
-
-                <button
-                    type="submit"
-                    className="btn btn-secondary btn-sm float-right"
-                    onSubmit={handleSubmit}
-                >
-                  Submit
-                </button>
-              </form>
+      <div className="container">
+        <div className="card-body send-msg">
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Send a message!</label>
+              <input
+                name="messageText"
+                className="form-control"
+                value={formData.messageText}
+                onChange={handleChange}
+              />
             </div>
-          </div>
-          <Link className="btn btn-primary btn-block mt-2 ml-2" to={{pathname: `/areas/${area}`}}>Back to Area Home</Link>
+
+            {formErrors.length
+              ? <Alert type="danger" messages={formErrors} />
+              : null
+            }
+
+            <button
+              type="submit"
+              className="btn btn-secondary btn-sm float-right"
+              onSubmit={handleSubmit}
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
   );

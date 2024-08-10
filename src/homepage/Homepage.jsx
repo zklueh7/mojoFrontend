@@ -18,7 +18,7 @@ function Homepage({ login }) {
   return (
     <div className="container text-center">
       {currentUser
-        ? <p>You're logged in</p>
+        ? <h3 className="heading">Welcome to CatchApp!</h3>
         : <HomepageAnon login={login} />
       }
     </div>

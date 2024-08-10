@@ -1,5 +1,7 @@
-img {
-    width: 50vw;
+.area-image {
+    width: 100%;
+    /* margin-left: 15%; */
+    margin-bottom: 10px;
 }
 
 .weather-img {
@@ -16,4 +18,17 @@ img {
 
 .forecast-img {
     width: 125px;
+}
+
+.card-body {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+.area-home-btn {
+    margin-top: 0px;
+    margin-bottom: 20px;
 }

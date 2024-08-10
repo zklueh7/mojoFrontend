@@ -75,7 +75,7 @@ function LoginForm({ login }) {
                     : null}
 
                 <button
-                    className="btn"
+                    className="btn login"
                     onSubmit={handleSubmit}
                 >
                   Log in

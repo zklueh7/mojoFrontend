@@ -28,17 +28,15 @@ function AreaHome() {
   if (!areaInfo) return <LoadingSpinner />;
 
   return (
-      <div className="area-home">
-        <div className="card mt-2 ml-2 mr-4">
-        <div className="card-body ml-1 pt-2">
-          <h6 className="card-title">{areaInfo.title}</h6>
-          <p>{areaInfo.description}</p>
-          <img className="area-image" src={areaInfo.pictureUrl}></img>
-          <Link className="btn btn-primary btn-block mt-2" to={{pathname: `/areas/${areaInfo.name}/weather`}}>Weather</Link>
-          <Link className="btn btn-primary btn-block mt-2" to={{pathname: `/areas/${areaInfo.name}/messages`}}>Message Board</Link>
-        </div>
-        </div>
+    <div className="container">
+      <div className="card-body">
+        <h3 className="heading">{areaInfo.title}</h3>
+        <p>{areaInfo.description}</p>
+        <img className="area-image" src={areaInfo.pictureUrl}></img>
+        <Link className="btn" to={{ pathname: `/areas/${areaInfo.name}/weather` }}>Weather</Link>
+        <Link className="btn mt-2" to={{ pathname: `/areas/${areaInfo.name}/messages` }}>Message Board</Link>
       </div>
+    </div>
   );
 }
 

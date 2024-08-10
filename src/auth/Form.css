@@ -1,8 +1,7 @@
 .form-control {
-    margin-bottom: 5px;
     height: 42px;
-    /* background-color: #dad7cd;
-    border-color: #dad7cd; */
+    margin-top: 10px;
+    border-color: lightgray;
 }
 
 .btn {
@@ -32,4 +31,18 @@ h3 {
 
 form {
     background-color: #ccd5ae;
+}
+
+.login {
+    margin-top: 10px;
+}
+
+label {
+    margin-top: 7px;
+    margin-left: 3px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

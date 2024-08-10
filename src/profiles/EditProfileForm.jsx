@@ -94,108 +94,102 @@ function EditProfileForm() {
   }
 
   return (
-      <div className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-        <h3 className="text-center mt-2">Edit Profile</h3>
-        <div className="card">
-          <div className="card-body">
-            <form>
-              <div className="form-group">
-                <label>Username:</label>
-                <p className="form-control-plaintext">{formData.username}</p>
-              </div>
-              <div className="form-group">
-                <label>First Name:</label>
-                <input
-                    name="firstName"
-                    className="form-control"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Last Name:</label>
-                <input
-                    name="lastName"
-                    className="form-control"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Email:</label>
-                <input
-                    name="email"
-                    className="form-control"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Looking for partners?</label>
-                <input
-                    name="lookingForPartners"
-                    className="form-control"
-                    value={formData.lookingForPartners}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Climbing Type:</label>
-                <input
-                    name="climbingType"
-                    className="form-control"
-                    value={formData.climbingType}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Experience Level:</label>
-                <input
-                    name="experienceLevel"
-                    className="form-control"
-                    value={formData.experienceLevel}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Picture URL:</label>
-                <input
-                    name="pictureUrl"
-                    className="form-control"
-                    value={formData.pictureUrl}
-                    onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Confirm password to make changes:</label>
-                <input
-                    type="password"
-                    name="password"
-                    className="form-control"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
-              </div>
-
-              {formErrors.length
-                  ? <Alert type="danger" messages={formErrors} />
-                  : null}
-
-              {saveConfirmed
-                  ?
-                  <Alert type="success" messages={["Updated successfully."]} />
-                  : null}
-
-              <button
-                  className="btn btn-primary btn-block mt-2"
-                  onClick={handleSubmit}
-              >
-                Save Changes
-              </button>
-            </form>
+    <div className="container">
+      <h3 className="heading">Edit {formData.username}'s Profile</h3>
+      <div className="card-body">
+        <form>
+          <div className="form-group">
+            <label>First Name:</label>
+            <input
+              name="firstName"
+              className="form-control"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
           </div>
-        </div>
+          <div className="form-group">
+            <label>Last Name:</label>
+            <input
+              name="lastName"
+              className="form-control"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Email:</label>
+            <input
+              name="email"
+              className="form-control"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Looking for partners?</label>
+            <input
+              name="lookingForPartners"
+              className="form-control"
+              value={formData.lookingForPartners}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Climbing Type:</label>
+            <input
+              name="climbingType"
+              className="form-control"
+              value={formData.climbingType}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Experience Level:</label>
+            <input
+              name="experienceLevel"
+              className="form-control"
+              value={formData.experienceLevel}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Picture URL:</label>
+            <input
+              name="pictureUrl"
+              className="form-control"
+              value={formData.pictureUrl}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Confirm password to make changes:</label>
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </div>
+
+          {formErrors.length
+            ? <Alert type="danger" messages={formErrors} />
+            : null}
+
+          {saveConfirmed
+            ?
+            <Alert type="success" messages={["Updated successfully."]} />
+            : null}
+
+          <button
+            className="btn btn-primary btn-block mt-2"
+            onClick={handleSubmit}
+          >
+            Save Changes
+          </button>
+        </form>
       </div>
+    </div>
   );
 }
 

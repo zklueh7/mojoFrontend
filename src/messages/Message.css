@@ -1,15 +1,40 @@
 .thumbnail {
     width: 50px;
     display: inline;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 .msg-info {
     display: inline;
     font-style: italic;
+    font-size: 0.85rem;
     margin-left: 10px;
-
 }
 
 .msg-text {
-    margin-left: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.message-card {
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.msg-board {
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lead {
+    margin-top: 15px;
 }
