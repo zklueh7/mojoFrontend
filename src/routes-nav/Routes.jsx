@@ -11,7 +11,8 @@ import AreaHome from "../areas/AreaHome";
 import AreaMessages from "../messages/AreaMessages";
 import AreaWeather from "../areas/AreaWeather";
 import VolunteerList from "../volunteers/VolunteerList";
-import SurveyComponent from "../surveys/owner_relinq_survey";
+import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
+import ShelterRelinqSurvey from "../surveys/shelter_relinq_survey";
 import SurveyHome from "../surveys/SurveyHome";
 
 /** Site-wide routes.
@@ -49,7 +50,9 @@ function MojoRoutes({ login, signup }) {
 
               <Route exact path="/volunteers" element={<VolunteerList />} />
 
-              <Route exact path="/surveys/owner-relinquish-survey" element={<SurveyComponent />} />
+              <Route exact path="/surveys/owner-relinquish-survey" element={<OwnerRelinqSurvey />} />
+
+              <Route exact path="/surveys/shelter-relinquish-survey" element={<ShelterRelinqSurvey />} />
 
               <Route exact path="/surveys" element={<SurveyHome />} />
   
