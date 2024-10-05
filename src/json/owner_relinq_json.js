@@ -67,9 +67,9 @@ export const json = {
       "title": "Dog Information",
       "elements": [
         {
-          "type": "boolean",
+          "type": "file",
           "name": "question4",
-          "title": "You will be required to send photos of the dog. They must include the following: 1. Front end 2. Back tail 3. Right side 4. Left side. Send directly to relinquish@mokanbcrescue.org Your request will NOT be processed unless adequate photos are sent. Do you agree?",
+          "title": "Please upload photos of the dog. They must include the following: 1. Front end 2. Back tail 3. Right side 4. Left side",
           "isRequired": true
         },
         {

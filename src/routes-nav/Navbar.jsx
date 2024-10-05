@@ -14,7 +14,7 @@ function Navbar({ logout }) {
   return (
     <nav className="Navigation navbar navbar-expand-md">
       <Link className="navbar-brand ml-1 linky" to="/">
-        Mojo
+        MoJo
       </Link>
       <ul className="navbar-nav ml-auto">
         <li className="nav-item mr-4">
@@ -37,7 +37,7 @@ function Navbar({ logout }) {
             Dogs
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item mr-4">
           <Link className="nav-link linky" to="/" onClick={logout}>
             Log Out {currentUser.first_name || currentUser.username}
           </Link>

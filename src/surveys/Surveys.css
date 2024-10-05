@@ -25,7 +25,9 @@ div {
     color: black;
 }
 
-
+.sd-completedpage {
+    background-color: #5e548e;
+}
 
 .sd-btn {
     border-color: #5e548e;
@@ -41,4 +43,16 @@ div {
 
 .my-btn {
     margin-right: 10px;
+}
+
+h3 {
+    color: black;
+}
+
+.sv-svg-icon {
+    background-color: white;
+}
+
+span {
+    color: black;
 }
