@@ -1,0 +1,40 @@
+.indent {
+    margin-left: 10px;
+}
+
+.sv-string-viewer {
+    color: black;
+}
+/* 
+div {
+    background-color: #5e548e;
+} */
+
+.sv-components-column, .sv-components-column--expandable {
+    background-color: #5e548e;
+}
+
+.sd-title.sd-container-modern__title {
+    background-color: #5e548e;
+}
+
+.sd-element {
+    background-color: #9f86c0;
+}
+.sd-question__required-text {
+    color: black;
+}
+
+
+
+.sd-btn {
+    border-color: #5e548e;
+    background-color: #cddafd;
+    color: black;
+}
+
+.sd-btn:active {
+    border-color: #5e548e;
+    background-color: #cddafd;
+    color: black
+}

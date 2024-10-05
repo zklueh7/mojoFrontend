@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import CatchAppApi from "../api/api";
+import MojoApi from "../api/api";
 import LoadingSpinner from "../common/LoadingSpinner";
 import "./Search.css";
 
@@ -24,7 +24,7 @@ function Search() {
 
   /** Triggered by search form submit; reloads jobs. */
   async function search(handle) {
-    let areas = await CatchAppApi.getAreas(handle);
+    let results = await MojoApi.getUsers(handle);
     console.log(areas);
     setAreas(areas);
   }
@@ -33,14 +33,14 @@ function Search() {
   return (
     <div className="area-list col-md-6 offset-md-3 pt-4">
       <SearchBar searchFor={search} />
-      <div className="area-results">
-        {areas.length
-          ? areas.map(area => (<Link className="area-link" to={{ pathname: `/areas/${area.name}` }}>{area.title}</Link>))
+      <div className="search-results">
+        {results.length
+          ? results.map(result => (<Link className="result-link" to={{ pathname: `/${volOrDog}/${result.id}` }}>{result.first_name}</Link>))
           : <p>Sorry, no results were found!</p>
         }
       </div>
     </div>
   );
-}
+} 
 
 export default Search;

@@ -29,11 +29,7 @@ function EditProfileForm() {
     lastName: currentUser.lastName,
     email: currentUser.email,
     username: currentUser.username,
-    password: "",
-    lookingForPartners: currentUser.lookingForPartners,
-    climbingType: currentUser.climbingType,
-    experienceLevel: currentUser.experienceLevel,
-    pictureUrl: currentUser.pictureUrl
+    password: ""
   });
   const [formErrors, setFormErrors] = useState([]);
 
@@ -56,11 +52,7 @@ function EditProfileForm() {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      password: formData.password,
-      lookingForPartners: formData.lookingForPartners,
-      climbingType: formData.climbingType,
-      experienceLevel: formData.experienceLevel,
-      pictureUrl: formData.pictureUrl
+      password: formData.password
     };
 
     let username = formData.username;
@@ -122,42 +114,6 @@ function EditProfileForm() {
               name="email"
               className="form-control"
               value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Looking for partners?</label>
-            <input
-              name="lookingForPartners"
-              className="form-control"
-              value={formData.lookingForPartners}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Climbing Type:</label>
-            <input
-              name="climbingType"
-              className="form-control"
-              value={formData.climbingType}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Experience Level:</label>
-            <input
-              name="experienceLevel"
-              className="form-control"
-              value={formData.experienceLevel}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Picture URL:</label>
-            <input
-              name="pictureUrl"
-              className="form-control"
-              value={formData.pictureUrl}
               onChange={handleChange}
             />
           </div>

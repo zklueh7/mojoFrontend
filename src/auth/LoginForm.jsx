@@ -44,7 +44,7 @@ function LoginForm({ login }) {
   }
 
   return (
-          <div className="card">
+          <div>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <input

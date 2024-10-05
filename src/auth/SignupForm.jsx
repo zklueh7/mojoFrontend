@@ -20,11 +20,7 @@ function SignupForm({ signup }) {
     password: "",
     firstName: "",
     lastName: "",
-    email: "",
-    lookingForPartners: "",
-    climbingType: "",
-    experienceLevel: "",
-    pictureUrl: ""
+    email: ""
   });
   const [formErrors, setFormErrors] = useState([]);
 
@@ -103,42 +99,7 @@ function SignupForm({ signup }) {
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <input
-              name="lookingForPartners"
-              placeholder="Looking for partners?"
-              className="form-control"
-              value={formData.lookingForPartners}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              name="climbingType"
-              placeholder="Climbing type?"
-              className="form-control"
-              value={formData.climbingType}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              name="experienceLevel"
-              placeholder="Experience level?"
-              className="form-control"
-              value={formData.experienceLevel}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              name="pictureUrl"
-              placeholder="Picture URL"
-              className="form-control"
-              value={formData.pictureUrl}
-              onChange={handleChange}
-            />
-          </div>
+
           {formErrors.length
             ? <Alert type="danger" messages={formErrors} />
             : null

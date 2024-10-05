@@ -10,14 +10,15 @@ const BASE_URL = "http://localhost:3001";
  *
  */
 
-class CatchAppApi {
+class MojoApi {
   // the token for interactive with the API will be stored here.
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
 
     const url = `${BASE_URL}/${endpoint}`;
-    const headers = { Authorization: `Bearer ${CatchAppApi.token}` };
+    console.log(url);
+    const headers = { Authorization: `Bearer ${MojoApi.token}` };
     const params = (method === "get")
         ? data
         : {};
@@ -37,6 +38,7 @@ class CatchAppApi {
 
   static async getCurrentUser(username) {
     let res = await this.request(`users/${username}`);
+    console.log("getCurrentUser");
     return res.user;
   }
 
@@ -69,33 +71,33 @@ class CatchAppApi {
     return res.user;
   }
 
-  /** Get area matching filter. */
+  /** Get user matching filter. */
 
-  static async getArea(name) {
-    let res = await this.request(`areas/${name}`);
-    console.log(res);
+  static async getUser(username) {
+    let res = await this.request(`users/${username}`);
+    console.log("getUser");
     return res.area;
   }
 
 
-  /** Get areas matching filter. */
+  /** Get users matching filter. */
 
-    static async getAreas(name) {
-      let res = await this.request("areas", { name });
-      console.log(res);
-      return res.areas;
+    static async getUsers() {
+      let res = await this.request("users");
+      console.log("users", res.users);
+      return res.users;
     }
 
-  /** Get areas matching filter. */
+  /** Get dogs matching filter. */
 
-    static async getMessages(area) {
+    static async getDogs(area) {
       let res = await this.request("messages", { area });
       console.log(res);
       return res.messages;
     }
 
-    /** Post new message to database */
-    static async postMessage(data) {
+    /** Post new dog to database */
+    static async postDogs(data) {
       let res = await this.request("messages", data, "post" );
       console.log(res);
       return res.message;
@@ -103,4 +105,4 @@ class CatchAppApi {
 }
 
 
-export default CatchAppApi;
+export default MojoApi;

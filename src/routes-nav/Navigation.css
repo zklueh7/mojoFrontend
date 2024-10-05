@@ -21,11 +21,11 @@
   }
 
   .navbar {
-    background-color: #588157;
-    /* color: #1B4332; */
+    background-color: #cddafd;
     /* font-weight: bold; */
   }
-/* 
-  .linky {
-        color: #1B4332;
-  } */
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+

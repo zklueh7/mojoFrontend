@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage";
-import CatchRoutes from "./routes-nav/Routes";
+import MojoRoutes from "./routes-nav/Routes";
 import LoadingSpinner from "./common/LoadingSpinner";
-import CatchAppApi from "./api/api";
+import MojoApi from "./api/api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
 import Navbar from "./routes-nav/Navbar";
@@ -11,9 +11,9 @@ import "./App.css"
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // Key name for storing token in localStorage for "remember me" re-login
-export const TOKEN_STORAGE_ID = "catchapp-token";
+export const TOKEN_STORAGE_ID = "mojo-token";
 
-/** CatchApp application.
+/** Mojo application.
  *
  * - infoLoaded: has user data been pulled from API?
  *   (this manages spinner for "loading...")
@@ -45,8 +45,8 @@ function App() {
         try {
           let { username } = jwt.decode(token);
           // put the token on the API class so it can use it to call the API.
-          CatchAppApi.token = token;
-          let currentUser = await CatchAppApi.getCurrentUser(username);
+          MojoApi.token = token;
+          let currentUser = await MojoApi.getCurrentUser(username);
           setCurrentUser(currentUser);
         } catch (err) {
           console.error("App loadUserInfo: problem loading", err);
@@ -76,7 +76,7 @@ function App() {
    */
   async function signup(signupData) {
     try {
-      let token = await CatchAppApi.signup(signupData);
+      let token = await MojoApi.signup(signupData);
       setToken(token);
       return { success: true };
     } catch (errors) {
@@ -90,7 +90,7 @@ function App() {
    */
   async function login(loginData) {
     try {
-      let token = await CatchAppApi.login(loginData);
+      let token = await MojoApi.login(loginData);
       setToken(token);
       return { success: true };
     } catch (errors) {
@@ -109,7 +109,7 @@ function App() {
           <div className="App">
             {currentUser &&
             (<Navbar logout={logout}/>)}
-            <CatchRoutes login={login} signup={signup} />
+            <MojoRoutes login={login} signup={signup} />
           </div>
         </UserContext.Provider>
       </BrowserRouter>

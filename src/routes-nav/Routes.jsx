@@ -10,6 +10,9 @@ import Search from "../search/Search";
 import AreaHome from "../areas/AreaHome";
 import AreaMessages from "../messages/AreaMessages";
 import AreaWeather from "../areas/AreaWeather";
+import VolunteerList from "../volunteers/VolunteerList";
+import SurveyComponent from "../surveys/owner_relinq_survey";
+import SurveyHome from "../surveys/SurveyHome";
 
 /** Site-wide routes.
  *
@@ -19,7 +22,7 @@ import AreaWeather from "../areas/AreaWeather";
  * Visiting a non-existant route redirects to the homepage.
  */
 
-function CatchRoutes({ login, signup }) {
+function MojoRoutes({ login, signup }) {
   
     return (
         <div>
@@ -43,10 +46,16 @@ function CatchRoutes({ login, signup }) {
               <Route exact path="/areas/:area/messages" element={<AreaMessages />} />
 
               <Route exact path="/areas/:area/weather" element={<AreaWeather />} />
+
+              <Route exact path="/volunteers" element={<VolunteerList />} />
+
+              <Route exact path="/surveys/owner-relinquish-survey" element={<SurveyComponent />} />
+
+              <Route exact path="/surveys" element={<SurveyHome />} />
   
             </Routes>
         </div>
     );
   }
   
-  export default CatchRoutes;
+  export default MojoRoutes;

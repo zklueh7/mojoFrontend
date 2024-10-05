@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
-import CatchAppApi from "../api/api";
-import "./Profile.css";
+import MojoApi from "../api/api";
+import "./Volunteer.css";
 
 /** User profile page
  *
@@ -11,15 +11,14 @@ import "./Profile.css";
  * 
  */
 
-function Profile() {
-  const { currentUser } = useContext(UserContext);
-  const miscClimber = "/public/misc_climber.png";
+function VolunteerDetail(volunteer) {
+    console.log(volunteer);
 
   async function handleDelete(evt) {
     evt.preventDefault();
 
     try {
-      await CatchAppApi.deleteProfile(currentUser.username);
+      await MojoApi.deleteProfile(currentUser.username);
     } catch (errors) {
       debugger;
       return;
@@ -28,12 +27,11 @@ function Profile() {
 
   return (
     <div className="container">
-      <h3 className="heading">My Profile</h3>
-      <div className="card-body">
-        <p>Username: {currentUser.username}</p>
-        <p>First Name: {currentUser.firstName}</p>
-        <p>Last Name: {currentUser.lastName}</p>
-        <p>Email: {currentUser.email}</p>
+      <div className="card-body vol-profile">
+        <p>Username: {volunteer.volunteer.username}</p>
+        <p>First Name: {volunteer.volunteer.firstName}</p>
+        <p>Last Name: {volunteer.volunteer.lastName}</p>
+        <p>Email: {volunteer.volunteer.email}</p>
         <p>
           <Link className="btn" to="/edit-profile-form">
             Edit Profile
@@ -47,4 +45,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default VolunteerDetail;
