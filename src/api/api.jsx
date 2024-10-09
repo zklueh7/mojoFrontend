@@ -102,6 +102,20 @@ class MojoApi {
       console.log(res);
       return res.message;
     }
+
+    /** Post new test to database */
+    static async addTest(data) {
+      let res = await this.request("test", data, "post");
+      console.log(res);
+      return res.test;
+    }
+
+    /** Get all tests from database */
+    static async getTests() {
+      let res = await this.request("test");
+      console.log(res);
+      return res.test;
+    }
 }
 
 

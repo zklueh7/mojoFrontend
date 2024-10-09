@@ -22,6 +22,10 @@ function SurveyHome() {
                     to="/surveys/shelter-relinquish-survey">
                     Shelter Relinquish Request
                 </Link>
+                <Link className="btn my-btn"
+                    to="/surveys/test-survey">
+                    Test Survey
+                </Link>
             </div>
 
         </div>
