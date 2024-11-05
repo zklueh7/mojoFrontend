@@ -88,17 +88,25 @@ class MojoApi {
       return res.users;
     }
 
-  /** Get dogs matching filter. */
+  /** Get all dogs */
 
-    static async getDogs(area) {
-      let res = await this.request("messages", { area });
+    static async getDogs() {
+      let res = await this.request("dogs");
       console.log(res);
-      return res.messages;
+      return res.dogs;
     }
 
+      /** Get dog by dog name */
+
+      static async getDog(dog) {
+        let res = await this.request(`dogs/${dog}`);
+        console.log(res);
+        return res.dog;
+      }
+
     /** Post new dog to database */
-    static async postDogs(data) {
-      let res = await this.request("messages", data, "post" );
+    static async postDog(data) {
+      let res = await this.request("dogs", data, "post" );
       console.log(res);
       return res.message;
     }

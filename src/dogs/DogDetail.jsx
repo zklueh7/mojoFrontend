@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import "../search/Search.css"
+import { Link, useLocation } from "react-router-dom";
 import MojoApi from "../api/api";
+import "./Dog.css";
 
 /** Dog profile page
  *
@@ -10,35 +12,30 @@ import MojoApi from "../api/api";
  */
 
 function DogDetail(dog) {
-    console.log("dog", dog);
+  console.log("dog", dog);
+  let data = {name: 'June', age: 4};
 
-//   async function handleDelete(evt) {
-//     evt.preventDefault();
+  //   async function handleDelete(evt) {
+  //     evt.preventDefault();
 
-//     try {
-//       await MojoApi.deleteProfile(currentUser.username);
-//     } catch (errors) {
-//       debugger;
-//       return;
-//     }
-//   }
+  //     try {
+  //       await MojoApi.deleteProfile(currentUser.username);
+  //     } catch (errors) {
+  //       debugger;
+  //       return;
+  //     }
+  //   }
 
   return (
-    <div className="container">
+    <div >
       <div className="card-body vol-profile">
-        <p>Name: {dog.dog.name}</p>
-        <p>Food type: {dog.dog.foodType}</p>
-        <p>Toppings: {dog.dog.toppings}</p>
-        {/* <p>
-          <Link className="btn" to="/edit-profile-form">
-            Edit Profile
-          </Link>
-          <Link className="btn" to="/delete-profile-form">
-            Delete Profile
-          </Link>
-        </p> */}
-      </div>
+        <p>
+          <Link className="btn" to={`/dogs/${dog.dog.dog_name}`} state={{state: 'mystate'}} >
+          {dog.dog.dog_name}
+        </Link>
+      </p>
     </div>
+    </div >
   );
 }
 

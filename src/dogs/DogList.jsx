@@ -21,21 +21,19 @@ function DogList() {
 
   /** Triggered by search form submit; reloads jobs. */
   async function search() {
-    let dogs = await MojoApi.getTests();
+    let dogs = await MojoApi.getDogs();
     console.log(dogs);
     setDogs(dogs);
   }
   if (!dogs) return <LoadingSpinner />;
 
   return (
-    <div className="area-list col-md-6 offset-md-3 pt-4">
       <div className="search-results">
         {dogs.length
           ? dogs.map(dog => (<DogDetail dog={dog}/>))
           : <p>Sorry, no dogs were found!</p>
         }
       </div>
-    </div>
   );
 } 
 

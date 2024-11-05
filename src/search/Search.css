@@ -3,21 +3,19 @@
     border-color: #ced4da;
     margin-bottom: 0px;
   }
-  
-  .area-link {
-    display: block;
-    text-decoration: none;
-    color: black;
-    background-color: lightgray;
-    padding-left: 12px;
-    /* background-color: #dad7cd;; */
-  }
-  
-.area-link:hover {
-    background-color: #588157;
-  }
+
+.dog-profile {
+  display: flex;
+}
 
 
 .form-control {
   margin-bottom: 0px;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px;
 }

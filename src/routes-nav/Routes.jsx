@@ -7,7 +7,7 @@ import Profile from "../profiles/Profile";
 import EditProfileForm from "../profiles/EditProfileForm";
 import DeleteProfileForm from "../profiles/DeleteProfileForm";
 import Search from "../search/Search";
-import AreaHome from "../areas/AreaHome";
+import DogDetailzzz from "../dogs/DogDetailzzz";
 import AreaMessages from "../messages/AreaMessages";
 import AreaWeather from "../areas/AreaWeather";
 import VolunteerList from "../volunteers/VolunteerList";
@@ -44,7 +44,7 @@ function MojoRoutes({ login, signup }) {
 
               <Route exact path="/search" element={<Search />} />
 
-              <Route exact path="/areas/:area" element={<AreaHome />} />
+              <Route exact path="/dogs/:dog" element={<DogDetailzzz />} />
 
               <Route exact path="/areas/:area/messages" element={<AreaMessages />} />
 
