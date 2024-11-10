@@ -1,12 +1,6 @@
 body {
-  /* background-color: #ccd5ae; */
   background-color: #5e548e;
-  /* font-family: "Roboto"; */
-  /* font-family: "Roboto Mono", monospace; */
-  /* font-family: "Poppins"; */
-  /* font-family: "Lato"; */
-  font-family: "Karla";
-  /* font-family: "Space mono"; */
+  font-family: Arial, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
