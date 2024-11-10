@@ -85,11 +85,11 @@ export const json = {
           "isRequired": true,
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Male",
               "text": "Male"
             },
             {
-              "value": "Item 2",
+              "value": "Female",
               "text": "Female"
             }
           ]
@@ -97,7 +97,13 @@ export const json = {
         {
           "type": "text",
           "name": "dog_age",
-          "title": "List the dog's age in years/months, height at shoulders and weight. If registered, please list registry and number.",
+          "title": "Please list the dog's age in years/months.",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "dog_weight",
+          "title": "Please list the dog's weight.",
           "isRequired": true
         },
         {
@@ -107,19 +113,19 @@ export const json = {
           "isRequired": true,
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Black/White (with or without tri)",
               "text": "Black/White (with or without tri)"
             },
             {
-              "value": "Item 2",
+              "value": "Blue Merle, Red Merle",
               "text": "Blue Merle, Red Merle"
             },
             {
-              "value": "Item 3",
+              "value": "Red/White (with or without tri)",
               "text": "Red/White (with or without tri)"
             },
             {
-              "value": "Item 4",
+              "value": "Other",
               "text": "Other"
             }
           ]
@@ -131,11 +137,11 @@ export const json = {
           "isRequired": true,
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Mixed",
               "text": "Mixed"
             },
             {
-              "value": "Item 2",
+              "value": "Purebred",
               "text": "Purebred"
             }
           ]
@@ -148,13 +154,13 @@ export const json = {
         },
         {
           "type": "text",
-          "name": "how_far_owner",
+          "name": "transportation",
           "title": "As the dog’s owner/caregiver, how far are you willing to drive to assist your dog getting into rescue and towards its foster home? Shelters, is any transportation assistance available?",
           "isRequired": true
         },
         {
           "type": "text",
-          "name": "dog_purchase",
+          "name": "dog_history",
           "title": "Did you purchase the dog? When and how long have you owned the dog? Please list the name of the previous owner/ breeder / shelter / rescue's name. Include their address and phone number. Have you contacted the previous owner / breeder to take the dog back? If not, why?",
           "isRequired": true
         },
@@ -213,7 +219,7 @@ export const json = {
         },
         {
           "type": "text",
-          "name": "dog_heartform",
+          "name": "dog_heartworm",
           "title": "Did the heartworm test include testing for tickborne disease? If yes, what were the results - negative or positive? If heartworm or tickborne disease positive please list disease and if treatment has started.",
           "isRequired": true
         },
@@ -572,11 +578,11 @@ export const json = {
           "isRequired": true,
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Inside the home",
               "text": "Inside the home"
             },
             {
-              "value": "Item 2",
+              "value": "Outside the home",
               "text": "Outside the home"
             }
           ]
@@ -723,11 +729,11 @@ export const json = {
           "isRequired": true,
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Yes",
               "text": "Yes"
             },
             {
-              "value": "Item 2",
+              "value": "No",
               "text": "No"
             }
           ]

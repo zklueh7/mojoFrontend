@@ -6,6 +6,15 @@ import { json } from "../json/owner_relinq_json";
 import MojoApi from "../api/api";
 
 async function addDog(dogData) {
+    dogData.shelter_or_owner = "Owner Surrender";
+    dogData.shelter_name = null;
+    dogData.contact_name = null;
+    dogData.contact_type = null;
+    dogData.contact_method = null;
+    dogData.contact_method_details = null;
+    dogData.rescue_reason = null;
+    dogData.intake_type = null;
+    dogData.dog_history = null;
     let testSuccess = await MojoApi.postDog(dogData);
 }
 

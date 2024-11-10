@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MojoApi from "../api/api";
+import { Link, useLocation } from "react-router-dom";
 import LoadingSpinner from "../common/LoadingSpinner";
-import DogDetail from "./DogDetail";
+import "./Dog.css";
 
 /** Show page with list of all dogs.
  *
@@ -28,13 +29,15 @@ function DogList() {
   if (!dogs) return <LoadingSpinner />;
 
   return (
-      <div className="search-results">
-        {dogs.length
-          ? dogs.map(dog => (<DogDetail dog={dog}/>))
-          : <p>Sorry, no dogs were found!</p>
-        }
-      </div>
+    <div className="search-results">
+      {dogs.length
+        ? dogs.map(dog => (<Link className="btn" to={`/dogs/${dog.dog_name}`} state={{ state: 'mystate' }} >
+          {dog.dog_name}
+        </Link>))
+        : <p>Sorry, no dogs were found!</p>
+      }
+    </div>
   );
-} 
+}
 
 export default DogList;

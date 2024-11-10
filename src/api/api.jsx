@@ -65,9 +65,9 @@ class MojoApi {
 
   /** Delete user profile page. */
 
-  static async deleteProfile(username) {
+  static async deleteDog(dog_id) {
     let data = {};
-    let res = await this.request(`users/${username}`, data, "delete");
+    let res = await this.request(`dogs/${dog_id}`, data, "delete");
     return res.user;
   }
 
@@ -75,7 +75,7 @@ class MojoApi {
 
   static async getUser(username) {
     let res = await this.request(`users/${username}`);
-    console.log("getUser");
+    // console.log("getUser");
     return res.area;
   }
 
@@ -84,7 +84,7 @@ class MojoApi {
 
     static async getUsers() {
       let res = await this.request("users");
-      console.log("users", res.users);
+      // console.log("users", res.users);
       return res.users;
     }
 
@@ -92,7 +92,7 @@ class MojoApi {
 
     static async getDogs() {
       let res = await this.request("dogs");
-      console.log(res);
+      // console.log(res);
       return res.dogs;
     }
 
@@ -100,28 +100,28 @@ class MojoApi {
 
       static async getDog(dog) {
         let res = await this.request(`dogs/${dog}`);
-        console.log(res);
+        // console.log(res);
         return res.dog;
       }
 
     /** Post new dog to database */
     static async postDog(data) {
       let res = await this.request("dogs", data, "post" );
-      console.log(res);
+      // console.log(res);
       return res.message;
     }
 
     /** Post new test to database */
     static async addTest(data) {
       let res = await this.request("test", data, "post");
-      console.log(res);
+      // console.log(res);
       return res.test;
     }
 
     /** Get all tests from database */
     static async getTests() {
       let res = await this.request("test");
-      console.log(res);
+      // console.log(res);
       return res.test;
     }
 }

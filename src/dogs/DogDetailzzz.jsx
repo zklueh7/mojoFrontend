@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../common/LoadingSpinner";
 import "../search/Search.css"
 import MojoApi from "../api/api";
@@ -13,62 +13,20 @@ import MojoApi from "../api/api";
 
 function DogDetail() {
     const { dog } = useParams();
+    const navigate = useNavigate();
 
     const [dogInfo, setDogInfo] = useState(null);
 
-    async function handleDelete(evt, dogInfo) {
-        evt.preventDefault();
-    
-        let username = currentUser.username;
-    
-        try {
-          await CatchAppApi.deleteProfile(username);
-        } catch (errors) {
-          debugger;
-          setFormErrors(errors);
-          return;
-        }
-    
-        setFormData(f => ({ ...f, password: "" }));
-        setFormErrors([]);
-        setSaveConfirmed(true);
-    
+    async function handleDelete(dogId) {
+            console.log(dogId);
+            await MojoApi.deleteDog(dogId);
+
+
         // trigger reloading of user information throughout the site
-        setCurrentUser(null);
-        navigate("/");
-      }
+        navigate("/dogs");
+    }
 
     function translate(dogInfo) {
-        // dog sex
-        if (dogInfo.dog_sex === "Item 1") {
-            dogInfo.sex = "Male";
-        }
-        if (dogInfo.dog_sex === "Item 2") {
-            dogInfo.dog_sex = "Female";
-        }
-
-        // dog color
-        if (dogInfo.dog_color === "Item 1") {
-            dogInfo.dog_color = "Black/White (with or without tri)";
-        }
-        if (dogInfo.dog_color === "Item 2") {
-            dogInfo.dog_color = "Blue Merle, Red Merle";
-        }
-        if (dogInfo.dog_color === "Item 3") {
-            dogInfo.dog_color = "Red/White (with or without tri)";
-        }
-        if (dogInfo.dog_color === "Item 4") {
-            dogInfo.dog_color = "Other";
-        }
-
-        // dog breed
-        if (dogInfo.dog_breed === "Item 1") {
-            dogInfo.dog_breed = "Mixed";
-        }
-        if (dogInfo.dog_breed === "Item 2") {
-            dogInfo.dog_breed = "Purebred";
-        }
-
         // dog veterinary history
         let vetHistStr = dogInfo.dog_vet_hist.slice(2, dogInfo.dog_vet_hist.length - 2);
         let vetHistArr = vetHistStr.split('","');
@@ -93,14 +51,6 @@ function DogDetail() {
         let dogAdjsStr = dogInfo.dog_adjectives.slice(2, dogInfo.dog_adjectives.length - 2);
         let dogAdjsArr = dogAdjsStr.split('","');
         dogInfo.dog_adjectives = dogAdjsArr.join(", ");
-
-        // dog indoors or outdoors
-        if (dogInfo.dog_location === "Item 1") {
-            dogInfo.dog_location = "Inside the home";
-        }
-        if (dogInfo.dog_location === "Item 2") {
-            dogInfo.dog_location = "Outside the home";
-        }
 
         // where dog stays when alone
         let dogAloneStr = dogInfo.dog_alone.slice(2, dogInfo.dog_alone.length - 2);
@@ -128,35 +78,38 @@ function DogDetail() {
     /** Triggered by search form submit; reloads jobs. */
     async function search(dog) {
         let dogInfo = await MojoApi.getDog(dog);
+        // console.log(dogInfo);
         dogInfo = translate(dogInfo);
         setDogInfo(dogInfo);
     }
     if (!dogInfo) return <LoadingSpinner />;
 
-    return (
-        <div>
+    if (dogInfo.shelter_or_owner === "Owner Surrender") {
+        return (
             <div className="card-body">
                 <img src={dogInfo.photos}></img>
                 <h1>{dogInfo.dog_name}</h1>
-                <h2>Owner Info:</h2>
+                <h6>Owner Surrender</h6>
+                <p><u>Owner Information:</u></p>
                 <p>Name: {dogInfo.owner_first_name} {dogInfo.owner_last_name}</p>
                 <p>Address: {dogInfo.owner_st_address} {dogInfo.owner_city}, {dogInfo.owner_state} {dogInfo.owner_zip}</p>
                 <p>Home phone: {dogInfo.owner_home_phone}</p>
                 <p>Cell phone: {dogInfo.owner_cell_phone}</p>
                 <p>Email: {dogInfo.owner_email}</p>
-                <h2>Dog Info:</h2>
+                <p><u>Dog Information:</u></p>
                 <p>Sex: {dogInfo.dog_sex}</p>
-                <p>Age/height/weight: {dogInfo.dog_age}</p>
+                <p>Age: {dogInfo.dog_age}</p>
+                <p>Weight: {dogInfo.dog_weight}</p>
                 <p>Color: {dogInfo.dog_color}</p>
                 <p>Purebred/mixed: {dogInfo.dog_breed}</p>
                 <p>Relinquishment reason: {dogInfo.relinquish_reason}</p>
-                <p>Distance owner is willing to drive: {dogInfo.how_far_owner}</p>
-                <p>Dog ownership history: {dogInfo.dog_purchase}</p>
+                <p>Distance owner is willing to drive: {dogInfo.transportation}</p>
+                <p>Dog ownership history: {dogInfo.dog_history}</p>
                 <p>Dog bite history: {dogInfo.dog_bite} </p>
                 <p>Dog nip history: {dogInfo.dog_nip}</p>
                 <p>Known health concerns: {dogInfo.dog_health}</p>
                 <p>Dog veterinary history: {dogInfo.dog_vet_hist}</p>
-                <p>Heartworm/ticknorne disease status: {dogInfo.dog_heartform}</p>
+                <p>Heartworm/ticknorne disease status: {dogInfo.dog_heartworm}</p>
                 <p>Dog's response to kids: {dogInfo.dog_kids}</p>
                 <p>Dog reacts negatively to: {dogInfo.dog_negative}</p>
                 <p>Dog reacts fearfully to: {dogInfo.dog_fearful}</p>
@@ -173,12 +126,58 @@ function DogDetail() {
                 <p>Dog's behavior when crated: {dogInfo.dog_crate_behavior}</p>
                 <p>Dog's crate behavior details: {dogInfo.dog_crate_behavior_deets}</p>
                 <p>Other animals the dog lives with: {dogInfo.dog_animals}</p>
-                <button className="btn btn-danger btn-block mt-2" onClick={handleDelete}>
-                    Delete
+                <button className="btn btn-danger btn-block mt-2" onClick={() => handleDelete(dogInfo.dog_id)}>
+                    Delete Dog Profile
                 </button>
             </div>
-        </div>
-    );
+
+    ) } else {
+        return (
+            <div className="card-body">
+                <img src={dogInfo.photos}></img>
+                <h1>{dogInfo.dog_name}</h1>
+                <h6>Shelter Surrender</h6>
+                <p><u>Shelter Information:</u></p>
+                <p>Shelter Name: {dogInfo.shelter_name}</p>
+                <p>Contact person's name: {dogInfo.contact_name} </p>
+                <p>Preferred contact method: {dogInfo.contact_method}</p>
+                <p>Contact info: {dogInfo.contact_method_details}</p>
+                <p><u>Dog Information:</u></p>
+                <p>Sex: {dogInfo.dog_sex}</p>
+                <p>Age: {dogInfo.dog_age}</p>
+                <p>Weight: {dogInfo.dog_weight}</p>
+                <p>Color: {dogInfo.dog_color}</p>
+                <p>Purebred/mixed: {dogInfo.dog_breed}</p>
+                <p>Reason for rescue transfer request {dogInfo.rescue_reason} </p>
+                <p>Is transportation assistance available: {dogInfo.transportation}</p>
+                <p>Intake type: {dogInfo.intake_type}</p>
+                <p>Reason for surrender if owner surrender: {dogInfo.relinquish_reason}</p>
+                <p>Dog bite history: {dogInfo.dog_bite} </p>
+                <p>Dog nip history: {dogInfo.dog_nip}</p>
+                <p>Known health concerns: {dogInfo.dog_health}</p>
+                <p>Dog veterinary history: {dogInfo.dog_vet_hist}</p>
+                <p>Heartworm/ticknorne disease status: {dogInfo.dog_heartworm}</p>
+                <p>Dog's response to kids: {dogInfo.dog_kids}</p>
+                <p>Dog reacts negatively to: {dogInfo.dog_negative}</p>
+                <p>Dog reacts fearfully to: {dogInfo.dog_fearful}</p>
+                <p>Details for above reactions: {dogInfo.dog_negative_deets}</p>
+                <p>Dog's response to  loud noises: {dogInfo.dog_noises}</p>
+                <p>Dog's response to movement: {dogInfo.dog_movement}</p>
+                <p>Cue's dog knows: {dogInfo.dog_tricks}</p>
+                <p>Description of dog: {dogInfo.dog_adjectives} </p>
+                <p>Details if owner marked the dog as aggressive, defensive, protective, fearful or dominant: {dogInfo.dog_agro_examples}</p>
+                <p>Behaviors that need improvement: {dogInfo.dog_improvement}</p>
+                <p>Where the dog predominantly lives: {dogInfo.dog_location}</p>
+                <p>Where the dog stays when home alone: {dogInfo.dog_alone}</p>
+                <p>Dog's behavior when crated: {dogInfo.dog_crate_behavior}</p>
+                <p>Dog's crate behavior details: {dogInfo.dog_crate_behavior_deets}</p>
+                <p>Other animals the dog lives with: {dogInfo.dog_animals}</p>
+                <button className="btn btn-danger btn-block mt-2" onClick={() => handleDelete(dogInfo.dog_id)}>
+                    Delete Dog Profile
+                </button>
+            </div>
+        );
+    }
 }
 
 export default DogDetail;
