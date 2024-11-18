@@ -15,8 +15,8 @@ function SurveyHome() {
             <h1 className="heading">Surveys</h1>
             <div className="container">
                 <Link className="card-body surveys"
-                    to="/surveys/shelter-relinquish-survey">
-                    Volunteer Form
+                    to="/surveys/volunteer-survey">
+                    Volunteer Survey
                 </Link>
                 <Link className="card-body surveys"
                     to="/surveys/owner-relinquish-survey">

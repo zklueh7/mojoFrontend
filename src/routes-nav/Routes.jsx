@@ -12,6 +12,7 @@ import VolunteerList from "../volunteers/VolunteerList";
 import DogList from "../dogs/DogList";
 import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
 import ShelterRelinqSurvey from "../surveys/shelter_relinq_survey";
+import VolunteerSurvey from "../surveys/volunteer_survey";
 import SurveyHome from "../surveys/SurveyHome";
 
 /** Site-wide routes.
@@ -50,6 +51,8 @@ function MojoRoutes({ login, signup }) {
               <Route exact path="/surveys/owner-relinquish-survey" element={<OwnerRelinqSurvey />} />
 
               <Route exact path="/surveys/shelter-relinquish-survey" element={<ShelterRelinqSurvey />} />
+
+              <Route exact path="/surveys/volunteer-survey" element={<VolunteerSurvey />} />
 
               <Route exact path="/surveys" element={<SurveyHome />} />
   
