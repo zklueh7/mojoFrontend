@@ -8,7 +8,6 @@ import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
 import Navbar from "./routes-nav/Navbar";
 import "./App.css"
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 // Key name for storing token in localStorage for "remember me" re-login
 export const TOKEN_STORAGE_ID = "mojo-token";

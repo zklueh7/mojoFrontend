@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import MojoApi from "../api/api";
 import { Link, useLocation } from "react-router-dom";
 import LoadingSpinner from "../common/LoadingSpinner";
-import "./Dog.css";
 
 /** Show page with list of all dogs.
  *

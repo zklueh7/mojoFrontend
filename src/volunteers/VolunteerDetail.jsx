@@ -12,7 +12,7 @@ import "./Volunteer.css";
  */
 
 function VolunteerDetail(volunteer) {
-    console.log(volunteer);
+  console.log(volunteer);
 
   async function handleDelete(evt) {
     evt.preventDefault();
@@ -27,10 +27,9 @@ function VolunteerDetail(volunteer) {
 
   return (
     <div className="container">
-      <div className="card-body vol-profile">
-        <p>Username: {volunteer.volunteer.username}</p>
-        <p>First Name: {volunteer.volunteer.firstName}</p>
-        <p>Last Name: {volunteer.volunteer.lastName}</p>
+      <div className="card-body">
+        <h3 className="subheading">{volunteer.volunteer.firstName} {volunteer.volunteer.lastName}</h3>
+        <p>Username: {volunteer.volunteer.firstName}</p>
         <p>Email: {volunteer.volunteer.email}</p>
         <p>
           <Link className="btn" to="/edit-profile-form">

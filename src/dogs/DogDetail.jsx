@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "../search/Search.css"
 import { Link, useLocation } from "react-router-dom";
 import MojoApi from "../api/api";
-import "./Dog.css";
 
 /** Dog profile page
  *

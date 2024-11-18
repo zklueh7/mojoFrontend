@@ -8,13 +8,10 @@ import EditProfileForm from "../profiles/EditProfileForm";
 import DeleteProfileForm from "../profiles/DeleteProfileForm";
 import Search from "../search/Search";
 import DogDetailzzz from "../dogs/DogDetailzzz";
-import AreaMessages from "../messages/AreaMessages";
-import AreaWeather from "../areas/AreaWeather";
 import VolunteerList from "../volunteers/VolunteerList";
 import DogList from "../dogs/DogList";
 import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
 import ShelterRelinqSurvey from "../surveys/shelter_relinq_survey";
-import TestSurvey from "../surveys/test_survey";
 import SurveyHome from "../surveys/SurveyHome";
 
 /** Site-wide routes.
@@ -46,10 +43,6 @@ function MojoRoutes({ login, signup }) {
 
               <Route exact path="/dogs/:dog" element={<DogDetailzzz />} />
 
-              <Route exact path="/areas/:area/messages" element={<AreaMessages />} />
-
-              <Route exact path="/areas/:area/weather" element={<AreaWeather />} />
-
               <Route exact path="/volunteers" element={<VolunteerList />} />
 
               <Route exact path="/dogs" element={<DogList />} />
@@ -57,8 +50,6 @@ function MojoRoutes({ login, signup }) {
               <Route exact path="/surveys/owner-relinquish-survey" element={<OwnerRelinqSurvey />} />
 
               <Route exact path="/surveys/shelter-relinquish-survey" element={<ShelterRelinqSurvey />} />
-
-              <Route exact path="/surveys/test-survey" element={<TestSurvey />} />
 
               <Route exact path="/surveys" element={<SurveyHome />} />
   

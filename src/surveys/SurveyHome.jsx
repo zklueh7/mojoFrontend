@@ -12,23 +12,23 @@ function SurveyHome() {
 
     return (
         <div>
-            <div className="indent">
-                <h1 className="heading">Surveys</h1>
-                <Link className="btn my-btn"
+            <h1 className="heading">Surveys</h1>
+            <div className="container">
+                <Link className="card-body surveys"
+                    to="/surveys/shelter-relinquish-survey">
+                    Volunteer Form
+                </Link>
+                <Link className="card-body surveys"
                     to="/surveys/owner-relinquish-survey">
                     Owner Relinquish Request
                 </Link>
-                <Link className="btn my-btn"
+                <Link className="card-body surveys"
                     to="/surveys/shelter-relinquish-survey">
                     Shelter Relinquish Request
                 </Link>
-                {/* <Link className="btn my-btn"
-                    to="/surveys/test-survey">
-                    Test Survey
-                </Link> */}
             </div>
-
         </div>
+
 
     );
 }

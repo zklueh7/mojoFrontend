@@ -48,8 +48,8 @@ function SignupForm({ signup }) {
 
   return (
     <div className="container">
-      <h3 className="heading">Sign Up</h3>
       <div className="card-body">
+      <h3 className="heading">Sign Up</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input

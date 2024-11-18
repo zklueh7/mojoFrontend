@@ -12,33 +12,33 @@ function Navbar({ logout }) {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <nav className="Navigation navbar navbar-expand-md">
-      <Link className="navbar-brand ml-1 linky" to="/">
+    <nav className="navbar navbar-expand-sm">
+      <Link className="navbar-brand" to="/">
         MoJo
       </Link>
       <ul className="navbar-nav ml-auto">
-        <li className="nav-item mr-4">
-          <NavLink className="nav-link linky" to="/map">
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/map">
             Map
           </NavLink>
         </li>
-        <li className="nav-item mr-4">
-          <NavLink className="nav-link linky" to="/surveys">
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/surveys">
             Surveys
           </NavLink>
         </li>
-        <li className="nav-item mr-4">
-          <NavLink className="nav-link linky" to="/volunteers">
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/volunteers">
             Volunteers
           </NavLink>
         </li>
-        <li className="nav-item mr-4">
-          <NavLink className="nav-link linky" to="/dogs">
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/dogs">
             Dogs
           </NavLink>
         </li>
-        <li className="nav-item mr-4">
-          <Link className="nav-link linky" to="/" onClick={logout}>
+        <li className="nav-item">
+          <Link className="nav-link" to="/" onClick={logout}>
             Log Out {currentUser.first_name || currentUser.username}
           </Link>
         </li>

@@ -1,31 +1,26 @@
-.Navigation {
-    background-color: white;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
-  }
-  
   .nav-link.active {
     font-weight: bold;
-    color: black;
-  }
-
-  .mr-4 {
-    margin-right: 5px;
-  }
-
-  .ml-1 {
-    margin-left: 5px;
-  }
-
-  .ml-2 {
-    margin-left: 5px;
-  }
-
-  .navbar {
-    background-color: #cddafd;
-    /* font-weight: bold; */
+    color: white;
   }
 
   .navbar-brand {
-    font-weight: bold;
+    margin-left: 0.3rem;
+    color: white;
+  }
+
+  .nav-item {
+    margin-right: 0.3rem;
+    color: white;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+
+
+  .navbar {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+    background-color: #9e2a2b;
   }
 

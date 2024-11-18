@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../common/Alert";
-import "./Form.css"
 
 /** Login form.
  *
@@ -15,18 +14,20 @@ import "./Form.css"
  */
 
 function LoginForm({ login }) {
+
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+
   const [formErrors, setFormErrors] = useState([]);
 
   /** Handle form submit:
    *
-   * Calls login func prop and, if successful, redirect to /companies.
+   * Calls login func prop and, if successful, redirect to home
    */
-
   async function handleSubmit(evt) {
     evt.preventDefault();
     let result = await login(formData);
@@ -44,44 +45,44 @@ function LoginForm({ login }) {
   }
 
   return (
-          <div>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <input
-                      name="username"
-                      placeholder="Username"
-                      className="form-control"
-                      value={formData.username}
-                      onChange={handleChange}
-                      autoComplete="username"
-                      required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                      className="form-control"
-                      value={formData.password}
-                      onChange={handleChange}
-                      autoComplete="current-password"
-                      required
-                  />
-                </div>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            name="username"
+            placeholder="Username"
+            className="form-control"
+            value={formData.username}
+            onChange={handleChange}
+            autoComplete="username"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            className="form-control"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="current-password"
+            required
+          />
+        </div>
 
-                {formErrors.length
-                    ? <Alert type="danger" messages={formErrors} />
-                    : null}
+        {formErrors.length
+          ? <Alert type="danger" messages={formErrors} />
+          : null}
 
-                <button
-                    className="btn login"
-                    onSubmit={handleSubmit}
-                >
-                  Log in
-                </button>
-              </form>
-            </div>
+        <button
+          className="btn"
+          onSubmit={handleSubmit}
+        >
+          Log in
+        </button>
+      </form>
+    </div>
   );
 }
 

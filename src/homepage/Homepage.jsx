@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 import HomepageAnon from "./HomepageAnon";
+import logo from "../imgs/favicon.jpg";
 
 /** Homepage of site.
  *
@@ -18,7 +19,8 @@ function Homepage({ login }) {
   return (
     <div className="container text-center">
       {currentUser
-        ? <h3 className="heading">Welcome to MoJo {currentUser.firstName}!</h3>
+        ? <div className="card-body"><h3> Welcome to Mojo {currentUser.username}!</h3>
+          <img className="mokan-logo" src={logo}></img></div>
         : <HomepageAnon login={login} />
       }
     </div>
