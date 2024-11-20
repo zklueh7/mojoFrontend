@@ -18,8 +18,8 @@ function DogDetail() {
     const [dogInfo, setDogInfo] = useState(null);
 
     async function handleDelete(dogId) {
-            console.log(dogId);
-            await MojoApi.deleteDog(dogId);
+        console.log(dogId);
+        await MojoApi.deleteDog(dogId);
 
 
         // trigger reloading of user information throughout the site
@@ -33,9 +33,12 @@ function DogDetail() {
         dogInfo.dog_vet_hist = vetHistArr.join(", ");
 
         // dog negative reactions
-        let dogNegStr = dogInfo.dog_negative.slice(2, dogInfo.dog_negative.length - 2);
-        let dogNegArr = dogNegStr.split('","');
-        dogInfo.dog_negative = dogNegArr.join(", ");
+        if (dogInfo.dog_negative) {
+            let dogNegStr = dogInfo.dog_negative.slice(2, dogInfo.dog_negative.length - 2);
+            let dogNegArr = dogNegStr.split('","');
+            dogInfo.dog_negative = dogNegArr.join(", ");
+        };
+
 
         // dog fearful reactions
         let dogFearStr = dogInfo.dog_fearful.slice(2, dogInfo.dog_fearful.length - 2);
@@ -131,7 +134,8 @@ function DogDetail() {
                 </button>
             </div>
 
-    ) } else {
+        )
+    } else {
         return (
             <div className="card-body">
                 <img src={dogInfo.photos}></img>

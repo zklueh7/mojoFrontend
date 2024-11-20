@@ -45,7 +45,6 @@ function LoginForm({ login }) {
   }
 
   return (
-    <div>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input
@@ -82,7 +81,6 @@ function LoginForm({ login }) {
           Log in
         </button>
       </form>
-    </div>
   );
 }
 

@@ -26,10 +26,6 @@
 }
 
 .surveys {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 125px;
     height: 125px;
 }

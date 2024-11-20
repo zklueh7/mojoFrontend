@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 import CatchAppApi from "../api/api";
-import "./Profile.css";
 
 /** User profile page
  *

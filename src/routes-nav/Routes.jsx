@@ -6,8 +6,7 @@ import LoginForm from "../auth/LoginForm";
 import Profile from "../profiles/Profile";
 import EditProfileForm from "../profiles/EditProfileForm";
 import DeleteProfileForm from "../profiles/DeleteProfileForm";
-import Search from "../search/Search";
-import DogDetailzzz from "../dogs/DogDetailzzz";
+import DogDetails from "../dogs/DogDetails";
 import VolunteerList from "../volunteers/VolunteerList";
 import DogList from "../dogs/DogList";
 import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
@@ -40,9 +39,7 @@ function MojoRoutes({ login, signup }) {
 
               <Route exact path="/delete-profile-form" element={<DeleteProfileForm />} />
 
-              <Route exact path="/search" element={<Search />} />
-
-              <Route exact path="/dogs/:dog" element={<DogDetailzzz />} />
+              <Route exact path="/dogs/:dog" element={<DogDetails />} />
 
               <Route exact path="/volunteers" element={<VolunteerList />} />
 

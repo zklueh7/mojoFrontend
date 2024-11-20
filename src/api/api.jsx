@@ -97,6 +97,12 @@ class MojoApi {
     return res.message;
   }
 
+  /** Get all volunteers */
+  static async getVolunteers() {
+    let res = await this.request("volunteers");
+    return res.volunteers;
+  }
+
   /** Post new volunteer to database */
   static async postVolunteer(data) {
     let res = await this.request("volunteers", data, "post");

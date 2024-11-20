@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LoginForm from "../auth/LoginForm";
 import "./Homepage.css";
+import logo from "../imgs/logo.jpg";
 
 /** Homepage of site.
  *
@@ -15,19 +16,16 @@ import "./Homepage.css";
 function HomepageAnon({ login }) {
 
     return (
-        <div>
-            <div className="card-body">
-                <h1 className="heading">MoJo</h1>
-                <h6 className="subheading">Welcome Mo-Kan volunteers! </h6>
-                <LoginForm login={login} />
-                <h2 className="or"><span>OR</span></h2>
-                <Link className="btn"
-                    to="/signup">
-                    Sign up
-                </Link>
-            </div>
+        <div className="card-body">
+            <h1 className="heading">Welcome Mo-Kan volunteers!</h1><img className="mokan-logo" src={logo}></img>
+            {/* <h6 className="subheading">Welcome Mo-Kan volunteers! </h6> */}
+            <LoginForm login={login} />
+            <h2 className="or"><span className="text-center">OR</span></h2>
+            <Link className="btn"
+                to="/signup">
+                Sign up
+            </Link>
         </div>
-
     );
 }
 

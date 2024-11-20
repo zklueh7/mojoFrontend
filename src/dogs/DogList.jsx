@@ -1,41 +1,43 @@
 import React, { useState, useEffect } from "react";
 import MojoApi from "../api/api";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoadingSpinner from "../common/LoadingSpinner";
 
 /** Show page with list of all dogs.
  *
- * On mount, loads users from API.
- * Re-loads filtered users on submit from search form.
+ * On mount, loads dogs from API.
  *
- *
- * This is routed to at /volunteers
+ * This is routed to at /dogs
  */
 
 function DogList() {
   const [dogs, setDogs] = useState(null);
 
+  // get all dogs on mount
   useEffect(function getAllDogsOnMount() {
     search();
   }, []);
 
-  /** Triggered by search form submit; reloads jobs. */
+  // get all dogs from API
   async function search() {
     let dogs = await MojoApi.getDogs();
-    console.log(dogs);
     setDogs(dogs);
   }
   if (!dogs) return <LoadingSpinner />;
 
   return (
-    <div className="search-results">
-      {dogs.length
-        ? dogs.map(dog => (<Link className="btn" to={`/dogs/${dog.dog_name}`} state={{ state: 'mystate' }} >
-          {dog.dog_name}
-        </Link>))
-        : <p>Sorry, no dogs were found!</p>
-      }
+    <div>
+      <h1 className="heading">Dogs</h1>
+      <div className="container">
+        {dogs.length
+          ? dogs.map(dog => (<Link className="btn" to={`/dogs/${dog.dog_name}`} >
+            {dog.dog_name}
+          </Link>))
+          : <p className="not-found-msg">Sorry, no dogs were found!</p>
+        }
+      </div>
     </div>
+
   );
 }
 

@@ -4,15 +4,6 @@
     margin-bottom: 0px;
   }
 
-.dog-profile {
-  display: flex;
-}
-
-
-.form-control {
-  margin-bottom: 0px;
-}
-
 .search-results {
   display: flex;
   flex-direction: row;
