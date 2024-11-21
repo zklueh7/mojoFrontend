@@ -17,3 +17,31 @@
    margin-top: 20px;
    margin-bottom: 20px;
 }
+
+.homepage {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start; 
+   align-items: center; 
+   text-align: center;
+   background-color: white;
+   border-radius: 12px;
+   padding: 10px 30px 20px 30px;
+   /* margin: 0px 20px 0px 20px; */
+   border-color: black;
+   border-width: 2px;
+   border-style: solid;
+   text-decoration: none;
+   height: auto;
+   width: auto;
+   max-width: 600px;
+   margin-top: 50px;
+}
+
+.outer-homepage {
+   display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items at the top */
+    height: 100vh; /* Full viewport height (optional) */
+    width: 100%; /* Full width */
+}

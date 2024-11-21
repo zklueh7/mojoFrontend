@@ -4,7 +4,8 @@
   }
 
   .navbar-brand {
-    margin-left: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1.5rem;
     color: white;
   }
 
@@ -22,3 +23,15 @@
     background-color: #9e2a2b;
   }
 
+.logo {
+  height: 130px;
+}
+
+.nav-link {
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.logo-div {
+  background-color: white;
+}
