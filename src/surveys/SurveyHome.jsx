@@ -11,26 +11,26 @@ import "./Surveys.css"
 function SurveyHome() {
 
     return (
-        <div>
-            <h1 className="heading">Surveys</h1>
-            <div className="container">
-                <Link className="card-body surveys"
+        <div className="outer-surveys">
+            <div className="top-surveys">
+                <h1 className="heading">Surveys</h1>
+            </div>
+            <div className="bottom-surveys">
+                <Link className="survey"
                     to="/surveys/volunteer-survey">
                     Volunteer Survey
                 </Link>
-                <Link className="card-body surveys"
+                <Link className="survey"
                     to="/surveys/owner-relinquish-survey">
                     Owner Relinquish Request
                 </Link>
-                <Link className="card-body surveys"
+                <Link className="survey"
                     to="/surveys/shelter-relinquish-survey">
                     Shelter Relinquish Request
                 </Link>
             </div>
+
         </div>
-
-
-
     );
 }
 

@@ -2,7 +2,8 @@
     color: black;
 }
 
-.sv-components-column, .sv-components-column--expandable {
+.sv-components-column,
+.sv-components-column--expandable {
     background-color: #d4d4d4;
 }
 
@@ -13,6 +14,7 @@
 .sd-element {
     background-color: white;
 }
+
 .sd-question__required-text {
     color: black;
 }
@@ -25,7 +27,46 @@
     background-color: white;
 }
 
-.surveys {
-    width: 125px;
-    height: 125px;
+
+.survey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px 30px 20px 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    height: 150px;
+}
+
+.top-surveys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.bottom-surveys {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+}
+
+.outer-surveys {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
 }
