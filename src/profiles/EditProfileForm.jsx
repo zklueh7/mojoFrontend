@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from "../common/Alert";
 import CatchAppApi from "../api/api";
 import UserContext from "../auth/UserContext";
+import "./Profile.css"
 
 // eslint-disable-next-line
 import useTimedMessage from "../hooks/useTimedMessage";
@@ -86,9 +87,9 @@ function EditProfileForm() {
   }
 
   return (
-    <div className="container">
-      <h3 className="heading">Edit {formData.username}'s Profile</h3>
-      <div className="card-body">
+    <div className="outer-profile">
+      <div className="profile">
+        <h3 className="heading">Edit {formData.username}'s Profile</h3>
         <form>
           <div className="form-group">
             <label>First Name:</label>

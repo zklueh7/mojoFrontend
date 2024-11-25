@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 import CatchAppApi from "../api/api";
+import "./Profile.css";
 
 /** User profile page
  *
@@ -26,9 +27,9 @@ function Profile() {
   }
 
   return (
-    <div className="container">
+    <div className="outer-profile">
+      <div className="profile">
       <h3 className="heading">My Profile</h3>
-      <div className="card-body">
         <p>Username: {currentUser.username}</p>
         <p>First Name: {currentUser.firstName}</p>
         <p>Last Name: {currentUser.lastName}</p>

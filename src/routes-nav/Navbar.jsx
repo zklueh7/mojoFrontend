@@ -21,7 +21,7 @@ function Navbar({ logout }) {
         <Link className="navbar-brand" to="/">
           Home
         </Link>
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav ml-auto align-items-center">
           <li className="nav-item">
             <NavLink className="nav-link" to="/map">
               Map
@@ -40,6 +40,11 @@ function Navbar({ logout }) {
           <li className="nav-item">
             <NavLink className="nav-link" to="/dogs">
               Dogs
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/profile">
+              My Profile
             </NavLink>
           </li>
           <li className="nav-item">

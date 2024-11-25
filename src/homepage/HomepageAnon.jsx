@@ -18,7 +18,7 @@ function HomepageAnon({ login }) {
     return (
         <div className="container">
             <div className="card-body">
-                <h1 className="heading">Welcome Mo-Kan Volunteers!</h1>
+                <h1 className="heading">Welcome Mo-Kan BCR Volunteers!</h1>
                 <img className="mokan-logo" src={logo}></img>
                 <LoginForm login={login} />
                 <h2 className="or"><span className="text-center">OR</span></h2>
