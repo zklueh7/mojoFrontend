@@ -8,6 +8,7 @@ import EditProfileForm from "../profiles/EditProfileForm";
 import DeleteProfileForm from "../profiles/DeleteProfileForm";
 import DogDetails from "../dogs/DogDetails";
 import VolunteerList from "../volunteers/VolunteerList";
+import VolunteerDetail from "../volunteers/VolunteerDetail";
 import DogList from "../dogs/DogList";
 import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
 import ShelterRelinqSurvey from "../surveys/shelter_relinq_survey";
@@ -42,6 +43,8 @@ function MojoRoutes({ login, signup }) {
               <Route exact path="/dogs/:dog" element={<DogDetails />} />
 
               <Route exact path="/volunteers" element={<VolunteerList />} />
+
+              <Route exact path="/volunteers/:volunteer" element={<VolunteerDetail />} />
 
               <Route exact path="/dogs" element={<DogList />} />
 

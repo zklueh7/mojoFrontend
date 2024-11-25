@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MojoApi from "../api/api";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../common/LoadingSpinner";
+import "./Dog.css";
 
 /** Show page with list of all dogs.
  *
@@ -26,11 +27,13 @@ function DogList() {
   if (!dogs) return <LoadingSpinner />;
 
   return (
-    <div>
-      <h1 className="heading">Dogs</h1>
-      <div className="container">
+    <div className="outer-dogs">
+      <div className="top-dogs">
+        <h1 className="heading">Dogs</h1>
+      </div>
+      <div className="bottom-dogs">
         {dogs.length
-          ? dogs.map(dog => (<Link className="btn" to={`/dogs/${dog.dog_name}`} >
+          ? dogs.map(dog => (<Link className="dog" to={`/dogs/${dog.dog_name}`} >
             {dog.dog_name}
           </Link>))
           : <p className="not-found-msg">Sorry, no dogs were found!</p>

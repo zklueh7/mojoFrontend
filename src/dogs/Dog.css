@@ -1,34 +1,4 @@
-.sv-string-viewer {
-    color: black;
-}
-
-.sv-components-column,
-.sv-components-column--expandable {
-    background-color: #d4d4d4;
-}
-
-.sd-title.sd-container-modern__title {
-    background-color: #d4d4d4;
-}
-
-.sd-element {
-    background-color: white;
-}
-
-.sd-question__required-text {
-    color: black;
-}
-
-.sd-completedpage {
-    background-color: #d4d4d4;
-}
-
-.sv-svg-icon {
-    background-color: white;
-}
-
-
-.survey {
+.dog {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,10 +12,35 @@
     text-decoration: none;
     color: black;
     width: 150px;
-    height: 150px;
+    height: 150px !important;
 }
 
-.top-surveys {
+.dog-dtls {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* text-align: center; */
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px 30px 20px 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    text-decoration: none;
+    color: black;
+    width: 70%;
+    min-width: 400px;
+}
+
+.outer-dog-dtls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.top-dogs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +48,7 @@
     width: 100%;
 }
 
-.bottom-surveys {
+.bottom-dogs {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -62,10 +57,11 @@
     width: 100%;
 }
 
-.outer-surveys {
+.outer-dogs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
 }
+

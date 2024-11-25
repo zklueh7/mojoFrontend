@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MojoApi from "../api/api";
 import LoadingSpinner from "../common/LoadingSpinner";
-import VolunteerDetail from "./VolunteerDetail";
+import "./Volunteers.css";
 
 /** Show page with list of all volunteers.
  *
@@ -27,9 +28,11 @@ function VolunteerList() {
   return (
     <div>
       <h1 className="heading">Volunteers</h1>
-        <div className="container">
+        <div className="outside-volunteers">
           {volunteers.length
-            ? volunteers.map(volunteer => (<VolunteerDetail volunteer={volunteer} />))
+            ? volunteers.map(volunteer => (<Link className="volunteers" to={`/volunteers/${volunteer.name}`} >
+              {volunteer.name}
+            </Link>))
             : <p>Sorry, no volunteers were found!</p>
           }
         </div>

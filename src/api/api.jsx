@@ -103,12 +103,25 @@ class MojoApi {
     return res.volunteers;
   }
 
+  /** Get all volunteers */
+    static async getVolunteer(volunteer) {
+      let res = await this.request(`volunteers/${volunteer}`);
+      return res.volunteer;
+    }
+
   /** Post new volunteer to database */
   static async postVolunteer(data) {
     let res = await this.request("volunteers", data, "post");
     console.log(res);
     return res.message;
   }
+
+    /** Delete volunteer profile page. */
+    static async deleteVolunteer(volunteer_id) {
+      let data = {};
+      let res = await this.request(`volunteers/${volunteer_id}`, data, "delete");
+      return res.volunteer;
+    }
 }
 
 
