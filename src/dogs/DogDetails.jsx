@@ -80,7 +80,7 @@ function DogDetail() {
     /** Triggered by search form submit; reloads jobs. */
     async function search(dog) {
         let dogInfo = await MojoApi.getDog(dog);
-        // console.log(dogInfo);
+        console.log(dogInfo);
         dogInfo = translate(dogInfo);
         setDogInfo(dogInfo);
     }
@@ -139,7 +139,7 @@ function DogDetail() {
         return (
             <div className="outer-dog-dtls">
                 <div className="dog-dtls">
-                    <img src={dogInfo.photos}></img>
+                    {/* <img src="data:image/jpeg;base64,{dogInfo.photos}"></img> */}
                     <h1>{dogInfo.dog_name}</h1>
                     <h6>Shelter Surrender</h6>
                     <p><u>Shelter Information:</u></p>

@@ -70,6 +70,9 @@ export const json = {
           "type": "file",
           "name": "photos",
           "title": "Please upload photos of the dog. They must include the following: 1. Front end 2. Back tail 3. Right side 4. Left side",
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "acceptedTypes": "image/*",
           "isRequired": false
         },
         {
