@@ -90,7 +90,7 @@ function DogDetail() {
         return (
             <div className="outer-dog-dtls">
                 <div className="dog-dtls">
-                    <img src={dogInfo.photos}></img>
+                    {/* <img src={dogInfo.photos}></img> */}
                     <h1>{dogInfo.dog_name}</h1>
                     <h6>Owner Surrender</h6>
                     <p><u>Owner Information:</u></p>
@@ -129,7 +129,7 @@ function DogDetail() {
                     <p>Dog's behavior when crated: {dogInfo.dog_crate_behavior}</p>
                     <p>Dog's crate behavior details: {dogInfo.dog_crate_behavior_deets}</p>
                     <p>Other animals the dog lives with: {dogInfo.dog_animals}</p>
-                    <button className="btn btn-danger btn-block mt-2" onClick={() => handleDelete(dogInfo.dog_id)}>
+                    <button className="btn" onClick={() => handleDelete(dogInfo.dog_id)}>
                         Delete Dog Profile
                     </button>
                 </div>
@@ -177,7 +177,7 @@ function DogDetail() {
                     <p>Dog's behavior when crated: {dogInfo.dog_crate_behavior}</p>
                     <p>Dog's crate behavior details: {dogInfo.dog_crate_behavior_deets}</p>
                     <p>Other animals the dog lives with: {dogInfo.dog_animals}</p>
-                    <button className="btn btn-danger btn-block mt-2" onClick={() => handleDelete(dogInfo.dog_id)}>
+                    <button className="btn" onClick={() => handleDelete(dogInfo.dog_id)}>
                         Delete Dog Profile
                     </button>
                 </div>
