@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../common/Alert";
+import "../homepage/Homepage.css"
 
 /** Signup form.
  *
@@ -47,8 +48,8 @@ function SignupForm({ signup }) {
   }
 
   return (
-    <div className="container">
-      <div className="card-body">
+    <div className="outer-homepage-anon">
+      <div className="card homepage-anon">
       <h3 className="heading">Sign Up</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group">

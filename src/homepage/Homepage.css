@@ -1,14 +1,14 @@
 .or {
-   width: 100%; 
-   border-bottom: 1px solid #000; 
+   width: 100%;
+   border-bottom: 1px solid #000;
    line-height: 0.1em;
    margin-top: 10px;
    margin-bottom: 10px;
-} 
+}
 
-.or span { 
+.or span {
    background: white;
-   padding: 0 10px; 
+   padding: 0 10px;
    font-size: 1rem;
 }
 
@@ -18,30 +18,39 @@
    margin-bottom: 20px;
 }
 
-.homepage {
+.homepage-anon {
    display: flex;
    flex-direction: column;
-   justify-content: flex-start; 
-   align-items: center; 
+   justify-content: center;
+   align-items: center;
    text-align: center;
-   background-color: white;
-   border-radius: 12px;
-   padding: 10px 30px 20px 30px;
-   /* margin: 0px 20px 0px 20px; */
-   border-color: black;
-   border-width: 2px;
-   border-style: solid;
-   text-decoration: none;
-   height: auto;
-   width: auto;
-   max-width: 600px;
-   margin-top: 50px;
+   max-width: 400px;
+   width: 70%;
 }
 
-.outer-homepage {
+.outer-homepage-anon {
    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align items at the top */
-    height: 100vh; /* Full viewport height (optional) */
-    width: 100%; /* Full width */
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 100%;
+}
+
+.homepage-user {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   max-width: 1000px;
+   width: 80%;
+}
+
+.outer-homepage-user {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin-top: 2rem;
+   margin-bottom: 1rem;
 }

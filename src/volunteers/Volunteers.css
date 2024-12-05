@@ -10,38 +10,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 12px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    text-decoration: none;
-    color: black;
     width: 150px;
     height: 150px !important;
+    text-decoration: none;
 }
 
 .volunteer-dtl {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* text-align: center; */
-    background-color: white;
-    border-radius: 12px;
-    padding: 10px 30px 20px 30px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    text-decoration: none;
-    color: black;
-    width: 70%;
+    width: 80%;
     min-width: 400px;
+    max-width: 1000px;
 }
 
 .outer-volunteer-dtl {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }

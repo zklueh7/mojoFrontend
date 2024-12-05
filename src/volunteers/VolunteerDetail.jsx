@@ -41,8 +41,8 @@ function VolunteerDetail() {
 
   return (
     <div className="outer-volunteer-dtl">
-      <div className="volunteer-dtl">
-        <h3 className="subheading">{volunteerInfo.name}</h3>
+      <div className="card volunteer-dtl">
+        <h1 className="heading">{volunteerInfo.name}</h1>
 
         <p><u>General Questions</u></p>
         <p>Address: {volunteerInfo.address}</p>

@@ -16,8 +16,8 @@ import logo from "../imgs/logo.jpg";
 function HomepageUser({ login }) {
 
     return (
-        <div className="outer-homepage">
-            <div className="homepage">
+        <div className="outer-homepage-user">
+            <div className="card homepage-user">
                 <h1 className="heading">Welcome Mo-Kan BCR Volunteers!</h1>
                 <p>This website is designed to be a tool to assist with internal volunteer logistics + coordinating and is a work in progress.</p>
                 <p>Any and all feedback is welcome, please email suggestions and questions to Zoey Klueh at zklueh@gmail.com </p>

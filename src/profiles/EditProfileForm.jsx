@@ -88,8 +88,8 @@ function EditProfileForm() {
 
   return (
     <div className="outer-profile">
-      <div className="profile">
-        <h3 className="heading">Edit {formData.username}'s Profile</h3>
+      <div className="card profile">
+        <h2 className="heading">Edit {formData.username}'s Profile</h2>
         <form>
           <div className="form-group">
             <label>First Name:</label>
@@ -110,7 +110,7 @@ function EditProfileForm() {
             />
           </div>
           <div className="form-group">
-            <label>Email:</label>
+            <label id="omg">Email:</label>
             <input
               name="email"
               className="form-control"

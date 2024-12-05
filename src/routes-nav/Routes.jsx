@@ -14,6 +14,7 @@ import OwnerRelinqSurvey from "../surveys/owner_relinq_survey";
 import ShelterRelinqSurvey from "../surveys/shelter_relinq_survey";
 import VolunteerSurvey from "../surveys/volunteer_survey";
 import SurveyHome from "../surveys/SurveyHome";
+import Map from "../maps/Map";
 
 /** Site-wide routes.
  *
@@ -55,6 +56,8 @@ function MojoRoutes({ login, signup }) {
               <Route exact path="/surveys/volunteer-survey" element={<VolunteerSurvey />} />
 
               <Route exact path="/surveys" element={<SurveyHome />} />
+
+              <Route exact path="/map" element={<Map />} />
   
             </Routes>
         </div>

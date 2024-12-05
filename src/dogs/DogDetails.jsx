@@ -89,10 +89,10 @@ function DogDetail() {
     if (dogInfo.shelter_or_owner === "Owner Surrender") {
         return (
             <div className="outer-dog-dtls">
-                <div className="dog-dtls">
+                <div className="card dog-dtls">
                     {/* <img src={dogInfo.photos}></img> */}
-                    <h1>{dogInfo.dog_name}</h1>
-                    <h6>Owner Surrender</h6>
+                    <h1 className="heading">{dogInfo.dog_name}</h1>
+                    <p>Surrender type: Owner Surrender</p>
                     <p><u>Owner Information:</u></p>
                     <p>Name: {dogInfo.owner_first_name} {dogInfo.owner_last_name}</p>
                     <p>Address: {dogInfo.owner_st_address} {dogInfo.owner_city}, {dogInfo.owner_state} {dogInfo.owner_zip}</p>
@@ -140,8 +140,8 @@ function DogDetail() {
             <div className="outer-dog-dtls">
                 <div className="dog-dtls">
                     {/* <img src="data:image/jpeg;base64,{dogInfo.photos}"></img> */}
-                    <h1>{dogInfo.dog_name}</h1>
-                    <h6>Shelter Surrender</h6>
+                    <h1 className="heading">{dogInfo.dog_name}</h1>
+                    <p>Surrender type: Shelter Surrender</p>
                     <p><u>Shelter Information:</u></p>
                     <p>Shelter Name: {dogInfo.shelter_name}</p>
                     <p>Contact person's name: {dogInfo.contact_name} </p>

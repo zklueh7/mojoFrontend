@@ -30,7 +30,7 @@ function VolunteerList() {
       <h1 className="heading">Volunteers</h1>
         <div className="outside-volunteers">
           {volunteers.length
-            ? volunteers.map(volunteer => (<Link className="volunteers" to={`/volunteers/${volunteer.name}`} >
+            ? volunteers.map(volunteer => (<Link className="card volunteers" to={`/volunteers/${volunteer.name}`} >
               {volunteer.name}
             </Link>))
             : <p>Sorry, no volunteers were found!</p>

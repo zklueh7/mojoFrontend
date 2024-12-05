@@ -23,6 +23,10 @@
     background-color: #d4d4d4;
 }
 
+.sd-body.sd-body--static {
+    padding-top: 2rem !important;
+}
+
 .sv-svg-icon {
     background-color: white;
 }

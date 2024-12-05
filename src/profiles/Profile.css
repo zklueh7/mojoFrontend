@@ -2,17 +2,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
-    background-color: white;
-    border-radius: 12px;
-    padding: 10px 30px 20px 30px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    text-decoration: none;
-    color: black;
+    /* text-align: center; */
     width: 70%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .outer-profile {

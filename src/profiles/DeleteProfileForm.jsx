@@ -74,7 +74,7 @@ function DeleteProfileForm() {
 
   return (
     <div className="outer-profile">
-      <div className="profile">
+      <div className="card profile">
         <h3 className="heading">Delete Profile</h3>
         <p>Are you sure you want to leave CatchApp?</p>
         <form>
@@ -99,7 +99,7 @@ function DeleteProfileForm() {
             : null}
 
           <button
-            className="btn btn-danger btn-block mt-2"
+            className="btn"
             onClick={handleSubmit}
           >
             Delete

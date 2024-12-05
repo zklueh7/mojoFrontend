@@ -16,8 +16,8 @@ import logo from "../imgs/logo.jpg";
 function HomepageAnon({ login }) {
 
     return (
-        <div className="container">
-            <div className="card-body">
+        <div className="outer-homepage-anon">
+            <div className="card homepage-anon">
                 <h1 className="heading">Welcome Mo-Kan BCR Volunteers!</h1>
                 <img className="mokan-logo" src={logo}></img>
                 <LoginForm login={login} />
